@@ -1,0 +1,19 @@
+---
+title: "The Cost of Exclusion: How Political Discrimination Undermines Trust in Political Institutions in the European Union"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+editor: source
+fig-cap-location: top
+fontfamily: inter
+fontfamilyoptions: 
+  - sfdefault
+---
+
+![Discrimination Incidence By Association Ground]("../tables/tab_dicg.png"){#tbl-dicg}
+
+![Demographic Composition Of People Who Has Experienced Political Discrimination or Harrasment]("../tables/tab_dpod.png"){#tbl-dpod}
+
+![Conditional Likelihood Of Demographic Traits and Experiences of Political Discrimination or Harrasment]("../tables/tab_dpod_logit.png"){#tbl-dpodlogit}

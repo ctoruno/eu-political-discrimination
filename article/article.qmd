@@ -2,7 +2,7 @@
 title: "The Cost of Exclusion: How Political Discrimination Undermines Trust in Political Institutions in the European Union"
 format:
   pdf:
-    toc: true
+    toc: false
     number-sections: true
     colorlinks: true
 editor: source
@@ -12,8 +12,42 @@ fontfamilyoptions:
   - sfdefault
 ---
 
-![Discrimination Incidence By Association Ground]("../tables/tab_dicg.png"){#tbl-dicg}
+## Introduction
 
-![Demographic Composition Of People Who Has Experienced Political Discrimination or Harrasment]("../tables/tab_dpod.png"){#tbl-dpod}
+## Literature Review
 
-![Conditional Likelihood Of Demographic Traits and Experiences of Political Discrimination or Harrasment]("../tables/tab_dpod_logit.png"){#tbl-dpodlogit}
+## Data Description
+
+The data presented in this study comes from the _EUROVOICES General Population Poll (EUGPP)_
+
+<<<<<<<< TABLE WITH DESCRIPTIVE STATISTICS OF THE SAMPLE]  >>>>>>>>
+
+## Political Discrimination in the European Union
+
+The EUGPP data set has a dedicated module to explore experiences of discrimination in 110 sub-national regions within the EU. Respondents were presented with a list of 11 grounds—e.g. sex, gender, migration status, ethnicity—and asked if they have experienced any form of discrimination or harassment (D/H) related to those grounds in the past 12 months. The Democracy & Fundamental Rights report from the EUROVOICES project identifies political opinion as the most frequently reason mentioned by respondents in XX out of 110 sub-national regions in the EU. As displayed in @tbl-dicg, political opinion was the most frequently mentioned ground for discrimination in 15 of the 27 member states of the EU.
+
+![Incidence Rates By Discrimination Grounds In The EU]("../tables/tab_dicg.png"){#tbl-dicg}
+
+<<<<<<<< TO TEST >>>>>>>>
+Political Opinion might not be the most frequently mentioned ground of discrimination mentioned by vulnerable groups (female, foreigner, minority, dark skin tone) but it is the most frequent in the overall sample because it affects multiple groups (vulnerable and not-vulnerable)
+<<<<<<<< END >>>>>>>>
+<<<<<<<< TABLE WITH INCIDENCE RATES FOR DIFFERENT VULNERABLE GROUPS >>>>>>>>
+
+![Demographic Profiles: Comparing Respondents With and Without Political D/H Experiences]("../tables/tab_dpod.png"){#tbl-dpod}
+
+![Socioeconomic and Political Predictors of Political D/H: Results from Logistic Regression Analysis]("../tables/tab_dpod_logit.png"){#tbl-dpodlogit}
+
+## Political Discrimination and Ideological Polarization
+
+![Relationship Between Experiencing Political D/H And Average Affective Polarization In The EU]("../viz/fig_diap.png"){#fig-diap}
+
+![Relationship Between Experiencing Political D/H And Average Affective Polarization: OLS Regression Results]("../tables/tab_diap_feols.png"){#tbl-diapfeols}
+
+## Political Discrimination and Trust in Political Institutions
+
+![Trust in Political Institutions Index: Distribution Comparison by Experience of Political D/H]("../viz/fig_tsbd.png"){#fig-tsbd}
+
+![Relationship Between Political D/H Experiences and Institutional Trust Measures: Regression Analysis]("../tables/tab_tsbd_fe.png"){#tbl-tsbdfe}
+
+## Conclusion
+

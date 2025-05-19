@@ -9,6 +9,7 @@ library(glue)
 library(haven)
 library(fixest)
 library(logisticPCA)
+library(modelsummary)
 library(tidyverse)
 
 if (interactive()){
@@ -27,7 +28,7 @@ if (interactive()){
 eugpp <- load_data(path2SP, "gpp")
 control_vars <- c(
   "female", "young", "rural", "fconst", "hedu", "employed", "married", "foreigner", 
-  "ipol", "polid", "minority", "incpp"
+  "ipol", "polid", "minority"
 )
 
 # Data subset for estimating TRT scores using a logistic PCA
@@ -60,7 +61,7 @@ tsbd_data <- eugpp %>%
   select(
     country = country_name_ltn, nuts_id,
     poldis,
-    all_of(control_vars)
+    all_of(control_vars), incpp
   ) %>%
   mutate(
     dh_exp = case_when(
@@ -136,19 +137,19 @@ ggsave(
 
 fe_models <- list(
   "(I)" = paste0(
-    "trt_score ~ poldis +", paste(control_vars, collapse = " + "), " | country"
+    "trt_score ~ poldis + incpp + poldis*incpp + ", paste(control_vars, collapse = " + "), " | country"
   ),
   "(II)" = paste0(
-    "TRT_govt_national ~ poldis +", paste(control_vars, collapse = " + "), " | country"
+    "TRT_govt_national ~ poldis + incpp + poldis*incpp + ", paste(control_vars, collapse = " + "), " | country"
   ),
   "(III)" = paste0(
-    "TRT_govt_local ~ poldis +", paste(control_vars, collapse = " + "), " | country"
+    "TRT_govt_local ~ poldis + incpp + poldis*incpp + ", paste(control_vars, collapse = " + "), " | country"
   ),
   "(IV)" = paste0(
-    "TRT_parliament ~ poldis +", paste(control_vars, collapse = " + "), " | country"
+    "TRT_parliament ~ poldis + incpp + poldis*incpp + ", paste(control_vars, collapse = " + "), " | country"
   ),
   "(V)" = paste0(
-    "TRT_judges ~ poldis +", paste(control_vars, collapse = " + "), " | country"
+    "TRT_judges ~ poldis + incpp + poldis*incpp + ", paste(control_vars, collapse = " + "), " | country"
   )
 )
 
@@ -176,7 +177,9 @@ fe_models_fit <- imap(
 )
 
 coef_map = c(
-  "poldis" = "D/H Experience"
+  "poldis" = "D/H Experience",
+  "incpp"  = "Incumbent Party Follower",
+  "poldis:incpp" = "D/H Experience * Incumbent Party Follower"
 )
 
 modelsummary(

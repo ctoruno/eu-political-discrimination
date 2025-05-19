@@ -27,7 +27,7 @@ Rscript -e "renv::restore()"
 Rscript main.R [OPTIONS]
 ```
 
-** Available Options:**
+**Available Options:**
 
 | Flag           | Description                                               |
 | -------------- | --------------------------------------------------------- |

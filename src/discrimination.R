@@ -192,38 +192,101 @@ tab_dpod <- dpod_data %>%
     poldis = case_when(
       poldis == 1 ~ "D/H Experience",
       poldis == 0 ~ "No D/H Experience",
-    )
+    ),
+    female = case_when(
+      female == 1 ~ "Female",
+      female == 0 ~ "Male"
+    ),
+    young = case_when(
+      young == 1 ~ "Young (18-35)",
+      young == 0 ~ "Not Young (35+)"
+    ),
+    rural = case_when(
+      rural == 1 ~ "Rural",
+      rural == 0 ~ "Urban"
+    ),
+    hedu = case_when(
+      hedu == 1 ~ "With Higher Education",
+      hedu == 0 ~ "No Higher Education"
+    ),
+    fconst = case_when(
+      fconst == 1 ~ "Constrained",
+      fconst == 0 ~ "Unconstrained"
+    ),
+    employed = case_when(
+      employed == 1 ~ "Employed",
+      employed == 0 ~ "Not Employed"
+    ),
+    married = case_when(
+      married == 1 ~ "Married",
+      married == 0 ~ "Single/Divorced"
+    ),
+    foreigner = case_when(
+      foreigner == 1 ~ "Foreigner",
+      foreigner == 0 ~ "Citizen"
+    ),
+    ipol = case_when(
+      ipol == 1 ~ "Interested",
+      ipol == 0 ~ "Uninterested"
+    ),
+    polid = case_when(
+      polid <= 3  ~ "Left",
+      polid <= 6  ~ "Center",
+      polid <= 10 ~ "Right"
+    ),
+    incpp = case_when(
+      incpp == 1 ~ "Incumbent Party",
+      incpp == 0 ~ "Other"
+    ),
+    minority = case_when(
+      minority == 1 ~ "Minority",
+      minority == 0 ~ "Main Group"
+    ),
   ) %>%
   select(
     poldis,
-    `Female` = female,
-    `Young (18-35)`        = young,
-    `Rural Residence`      = rural,
-    `Higher Education`     = hedu,
-    `Fin. Constrained`     = fconst,
-    `Employed`             = employed,
-    `Married`              = married,
-    `Foreigner`            = foreigner,
-    `Interest in Politics` = ipol,
-    `Left (Ideology)`      = left,
-    `Right (Ideology)`     = right,
-    `Inc. Party Follower`  = incpp,
-    `Minority Group`       = minority
+    `Gender`     = female,
+    `Age`        = young,
+    `Residence`  = rural,
+    `Education`  = hedu,
+    `Ethnical Group`       = minority,
+    `Financial Situation`  = fconst,
+    `Employment`           = employed,
+    `Marital Status`       = married,
+    `Migration Status`     = foreigner,
+    `Political Ideology`   = polid,
+    `Political Affiliation` = incpp,
   )
 
-datasummary_balance(
-  ~poldis,
+# datasummary_balance(
+#   ~poldis,
+#   data = tab_dpod,
+#   fmt = function(x) format(round(x*100,1), nsmall = 1),
+#   stars = TRUE,
+#   output = "tables/tab_dpod.png",
+#   notes  = c(
+#     "*Note*: Table displays the difference in proportions between people who answered to 
+#     have experienced discrimination or harrasment due to their political opinion and people who
+#     answered to not have experienced such events. *, **, and *** represent statistical 
+#     significance at p < 0.05, p < 0.01, and p < 0.001, respectively."
+#   ),
+#   align  = "lcccccc",
+#   escape = FALSE
+# )
+
+datasummary(
+  `Gender` + `Age` + `Residence` + `Education` + `Ethnical Group` + 
+    `Financial Situation` + `Employment` + `Marital Status` + 
+    `Migration Status` + `Political Ideology` + `Political Affiliation` ~ Percent("col")*poldis,
   data = tab_dpod,
-  fmt = function(x) format(round(x*100,1), nsmall = 1),
-  stars = TRUE,
+  fmt = function(x) format(round(x,1), nsmall = 1),
   output = "tables/tab_dpod.png",
   notes  = c(
-    "*Note*: Table displays the difference in proportions between people who answered to 
+    "*Note*: Table displays the proportions of socio-political traits between people who answered to
     have experienced discrimination or harrasment due to their political opinion and people who
-    answered to not have experienced such events. *, **, and *** represent statistical 
-    significance at p < 0.05, p < 0.01, and p < 0.001, respectively."
+    answered to not have experienced such events."
   ),
-  align  = "lcccccc",
+  align  = "llcc",
   escape = FALSE
 )
 
@@ -273,19 +336,27 @@ dpod_fit_models <- lapply(
   }
 )
 
-log.lik <- function(model) {
-  data.frame(
-    "Log.Lik" = round(model$loglik, 1)
-  )
-}
+mgeffects <- lapply(
+  dpod_fit_models,
+  function(x){
+    avg_comparisons(x)
+  }
+)
+
+extra_info <- tibble(
+  term    = c("Log.Lik", "Country FE", "Method"),
+  `(I)`   = c(round(dpod_fit_models[[1]]$loglik, 1),"", "Logit"),
+  `(II)`  = c(round(dpod_fit_models[[2]]$loglik, 1),"", "Logit"),
+  `(III)` = c(round(dpod_fit_models[[3]]$loglik, 1),"X", "Logit"),
+)
 
 modelsummary(
-  dpod_fit_models,
+  mgeffects,
   estimate     = "{estimate}{stars}",
   stars        = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
   coef_omit    = 1,
-  gof_omit     = "R2|RMSE",
-  gof_function = log.lik,
+  gof_omit     = "R2|RMSE|FE",
+  # gof_function = log.lik,
   coef_rename  = coef_rename_map,
   output = "tables/tab_dpod_logit.png",
   notes  = c(
@@ -296,5 +367,6 @@ modelsummary(
     and political covariates along with country fixed effects. *, **, and *** represent statistical significance at 
     p < 0.05, p < 0.01, and p < 0.001, respectively. Standard Errors are clustered at the country level."
   ),
+  add_rows = extra_info,
   escape = FALSE
 )

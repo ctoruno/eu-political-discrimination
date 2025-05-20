@@ -10,6 +10,7 @@ library(haven)
 library(fixest)
 library(logisticPCA)
 library(modelsummary)
+library(marginaleffects)
 library(tidyverse)
 
 if (interactive()){
@@ -176,6 +177,17 @@ fe_models_fit <- imap(
   }
 )
 
+extra_info <- tibble(
+  term    = c("Variable", "Method"),
+  `(I)`   = c("Trust Index", "OLS"),
+  `(II)`  = c("Nat. Govt.", "Logit"),
+  `(III)` = c("Loc. Govt.", "Logit"),
+  `(IV)`  = c("Parliament", "Logit"),
+  `(V)`   = c("Judges", "Logit")
+)
+# attr(extra_info, "position") <- c(8,9)
+# See the add_rows section in: https://modelsummary.com/vignettes/modelsummary.html#shape
+
 coef_map = c(
   "poldis" = "D/H Experience",
   "incpp"  = "Incumbent Party Follower",
@@ -193,10 +205,103 @@ modelsummary(
     on different measures of trust in political institutions and using a set of social and political traits as control
     variables. Model (I) uses the Trust in Political Institutions Index as a dependant variable, while models (II), 
     (III), (IV), and (V) use a binary variables equal to one if the person answered to have a lot or some trust in
-    national authoroties, local authorities, members of parliament, and judges and magistrates, respectively.
+    national authorities, local authorities, members of parliament, and judges and magistrates, respectively.
     *, **, and *** represent statistical significance at p < 0.05, p < 0.01, and p < 0.001, respectively. 
     Standard Errors are clustered at the country level."
   ),
+  add_rows = extra_info,
   escape = FALSE
 )
+
+marginal_effects <- lapply(
+  c("NoInt" = "NoInt", 
+    "Interaction" = "Interaction"),
+  function(type){
+    
+    if (type == "NoInt") {
+      
+      mgeffects <- lapply(
+        fe_models_fit,
+        function(x){
+          avg_comparisons(
+            x,
+            variables = "poldis"
+          )
+        }
+      )
+      extra_info <- tibble(
+        term    = c("Variable", "Method"),
+        `(I)`   = c("Trust Index", "OLS"),
+        `(II)`  = c("Nat. Govt.", "Logit"),
+        `(III)` = c("Loc. Govt.", "Logit"),
+        `(IV)`  = c("Parliament", "Logit"),
+        `(V)`   = c("Judges", "Logit")
+      )
+      
+      modelsummary(
+        mgeffects,
+        stars     = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
+        gof_omit  = "RMSE",
+        add_rows  = extra_info,
+        output = "tables/tab_tsbd_mgeffects_1.png",
+        notes = c(
+          "*Note*: Table shows the predicted probability of having experienced political discrimination or harrasment (D/H)
+          on different measures of trust in political institutions using a set of social and political traits as control
+          variables. Model (I) uses the Trust in Political Institutions Index as a dependant variable, while models (II), 
+          (III), (IV), and (V) use a binary variables equal to one if the person answered to have a lot or some trust in
+          national authorities, local authorities, members of parliament, and judges and magistrates, respectively.
+          *, **, and *** represent statistical significance at p < 0.05, p < 0.01, and p < 0.001, respectively. 
+          Standard Errors are clustered at the country level."
+        ),
+        escape = FALSE
+      )
+      
+    } else {
+      
+      mgeffects <- lapply(
+        fe_models_fit,
+        function(x){
+          avg_comparisons(
+            x,
+            variables = "poldis",
+            by = "incpp"
+          )
+        }
+      )
+      extra_info <- tibble(
+        term    = c("Variable", "Method"),
+        incpp   = c("", ""),
+        `(I)`   = c("Trust Index", "OLS"),
+        `(II)`  = c("Nat. Govt.", "Logit"),
+        `(III)` = c("Loc. Govt.", "Logit"),
+        `(IV)`  = c("Parliament", "Logit"),
+        `(V)`   = c("Judges", "Logit")
+      )
+      
+      modelsummary(
+        mgeffects,
+        stars     = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
+        gof_omit  = "R2|RMSE|AIC|BIC",
+        shape     = term + incpp ~ model,
+        add_rows  = extra_info,
+        output = "tables/tab_tsbd_mgeffects_2.png",
+        notes = c(
+          "*Note*: Table shows the predicted probability of having experienced political discrimination or harrasment (D/H)
+          on different measures of trust in political institutions by political alignment with the incumbent political party
+          (incpp =1) and using a set of social and political traits as control variables. Model (I) uses the Trust in 
+          Political Institutions Index as a dependant variable, while models (II), (III), (IV), and (V) use a binary variables 
+          equal to one if the person answered to have a lot or some trust in national authorities, local authorities, members 
+          of parliament, and judges and magistrates, respectively. *, **, and *** represent statistical significance at 
+          p < 0.05, p < 0.01, and p < 0.001, respectively. Standard Errors are clustered at the country level."
+        ),
+        escape = FALSE
+      )
+      
+      
+    }
+    
+  }
+)
+
+
 

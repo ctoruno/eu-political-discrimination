@@ -5,9 +5,8 @@
 \title{The Cost of Exclusion: Political Discrimination and Trust Deficits in the European Union}
 
 \author[1]{Carlos A. Toruño Paniagua}
-\author[2]{asp}
-\author[3]{amm}
-\affil[1,2,3]{\emph{The World Justice Project}}
+\author[2]{...}
+\affil[1,2]{\emph{The World Justice Project}}
 \date{June 2025}
 
 \begin{document}
@@ -93,8 +92,6 @@ The unconfoundedness assumption requires that treatment assignment be independen
 
 \section{Results}
 
-\subsection{Preprocessing of the study sample using matching methods}
-
 When we compare trust levels in political institutions between people who have experienced discrimination or harassment (D/H) due to their political opinions and those who have not, we observe that the former group typically achieves lower average scores, as shown in Figure \ref{fig:1}. This figure reveals a strong negative correlation between experiencing D/H events and current levels of institutional trust. However, this relationship cannot be claimed to be causal. As explained previously, people who initially have lower trust in institutions might display higher levels of political participation or activism and, therefore, be more prone to experiencing discrimination.
 
 \begin{figure}[htbp]
@@ -112,17 +109,19 @@ When we compare trust levels in political institutions between people who have e
 
 We attempt to isolate a causal effect by matching people who have experienced a D/H event with people who have similar demographic characteristics and political traits but have not experienced such events. This approach allows us to approximate the counterfactual outcomes that we cannot directly observe in our data. To evaluate how this matching affects our analysis, we begin by assessing the initial balance in characteristics between people who have experienced D/H events and those who have not.
 
+\subsection{Preprocessing of the study sample using matching methods}
+
 Appendix \ref{appendix:b} shows balance statistics for the whole sample prior to matching. As we can observe, several covariates display standardized mean differences above the thresholds suggested by the literature—0.1 or, more conservatively, 0.05. Of particular note are the high values for average civic participation, interest in politics, and political alignment with the incumbent party, suggesting that the political profiles of people who have suffered D/H due to their political opinions and those who have not are systematically different. Similarly, age and ethnic composition differ significantly between both groups on average, indicating that the demographic composition of the groups is also systematically different. These insights are validated by the variance ratios and empirical cumulative distribution functions (eCDFs).\footnote{The Std. Mean Diff. is the difference in group means standardized to a single scale for all covariates. The literature suggests values below 0.1—or more conservatively, below 0.05—as indicators of good balance (Ali et al., 2011; Stuart et al., 2013). The Var. Ratio compares the variance of a covariate between the treatment and control groups. Ratios close to 1 indicate good balance (Austin, 2009). Empirical Cumulative Distribution Function Statistics (eCDF) assess balance beyond the mean by comparing the full distribution of each covariate across groups (McCaffrey et al., 2004). Values close to zero indicate good balance.}
 
 After performing the matching procedure, we reassess the balance of covariates between the treatment and control groups. The results are presented in Table \ref{table:3}. As we can see, the matching procedure has significantly improved the balance of covariates between both groups. The standardized mean differences for all covariates are now below 0.05, indicating that the treatment and control groups are now comparable in terms of their demographic and political characteristics. This is further supported by the variance ratios, which are now close to 1 for all covariates, and the empirical cumulative distribution function (eCDF) statistics, which are also close to zero for all covariates. Appendix \ref{appendix:c} provides a love plot that visually summarizes the balance of covariates before and after matching.
 
 \input{"tabs/postmatch_balance.tex"}
 
-As a result of the matching procedure, our sample size was reduced from 44,235 individuals to 14,004 individuals. The final matched sample consists of 7,002 individuals who experienced D/H events and 7,002 individuals who did not. This reduction in sample size is a common outcome of matching procedures, as some individuals may not have suitable matches in the control group or may fall outside the common support region.
-
-When matching achieves balance across observed covariates, it suggests that the treatment and control groups are comparable in ways that validate the assumptions necessary for causal inference (Branson, 2021). However, balance represents a necessary but not sufficient condition for causality, as unobserved confounders may still bias our estimates.
+As a result of the matching procedure, our sample size was reduced from 44,235 individuals to 14,004 individuals. The final matched sample consists of 7,002 individuals who experienced D/H events and 7,002 individuals who did not. This reduction in sample size is a common outcome of matching procedures, as some individuals may not have suitable matches in the control group or may fall outside the common support region. This is the study sample we use to estimate the causal effect of political discrimination and harassment on trust in political institutions.
 
 \subsection{The effect of political discrimination and harassment on trust in political institutions}
+
+When matching achieves balance across observed covariates, it suggests that the treatment and control groups are comparable in ways that validate the assumptions necessary for causal inference (Branson, 2021). However, balance represents a necessary but not sufficient condition for causality, as unobserved confounders may still bias our estimates.
 
 \subsection{Sensitivity analysis}
 

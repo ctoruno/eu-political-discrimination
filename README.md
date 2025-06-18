@@ -44,19 +44,20 @@ Rscript main.R [OPTIONS]
 
 ```bash
 eu-political-discrimination/
+├── eu-political-discrimination.Rproj
 ├── article/                    # Paper source and outputs
 │   ├── article.qmd             # Quarto source for the paper
 │   ├── preamble.tex            # LaTeX preamble
 │   └── article.pdf             # Compiled PDF
-├── eu-political-discrimination.Rproj  # RStudio project file
 ├── main.R                      # Entry point: parses flags and runs analyses
 ├── renv/                       # Lockfile and cache for reproducible deps
 ├── src/                        # Analysis scripts
-│   ├── config.R               # Global configuration (paths, options)
-│   ├── data_loading.R         # Data import and cleaning
-│   ├── discrimination.R       # Discrimination analysis pipeline
-│   ├── polarization.R         # Polarization analysis pipeline
-│   └── trust.R                # Trust analysis pipeline
+│   ├── config.R                # Global configuration (paths, options)
+│   ├── data_loading.R          # Data import and cleaning
+│   ├── discrimination.R        # Discrimination analysis pipeline
+│   ├── polarization.R          # Polarization analysis pipeline
+│   ├── trust.R                 # Trust analysis pipeline
+│   └── extended.R              # Consolidated analysis pipeline
 ├── tables/                     # Generated tables (CSV/TSV)
 └── viz/                        # Generated figures (PNG/PDF)
 ```

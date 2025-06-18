@@ -1,0 +1,41 @@
+\begin{table}[hbtp]
+\centering
+\caption{Post-Matching Covariate Balance Assessment}
+\label{table:3}
+\footnotesize
+\vspace{2mm}
+\begin{talltblr}[
+label=none,
+remark{Note} = {The Std. Mean Diff. is the difference in group means standardized to a single scale for all covariates. The literature suggests values below 0.1—or more conservatively, below 0.05—as indicators of good balance (Ali et al., 2011; Stuart et al., 2013). The Var. Ratio compares the variance of a covariate between the treatment and control groups. Ratios close to 1 indicate good balance (Austin, 2009). Empirical Cumulative Distribution Function Statistics (eCDF) assess balance beyond the mean by comparing the full distribution of each covariate across groups (McCaffrey et al., 2004). Values close to zero indicate good balance.},
+remark{Source} = {Eurovoices General Population Poll 2024},
+]
+{                     
+colspec={Q[l]Q[c]Q[c]Q[c]Q[c]Q[c]Q[c]},
+% hline{4}={1,2,3,4,5,6}{solid, black, 0.1em},
+}                   
+\toprule
+  & \makecell{Mean\\D/H Exp.} & \makecell{Mean\\No D/H Exp.} & \makecell{Std. Mean\\Diff.} & \makecell{Var.\\Ratio} & \makecell{eCDF\\Mean} & \makecell{eCDF\\Max} \\ 
+\midrule
+Distance & 0.270 & 0.265 & 0.031 & 1.122 & 0.001 & 0.027\\
+Female & 0.468 & 0.461 & 0.014 & - & 0.007 & 0.007\\
+Age & 46.268 & 46.255 & 0.001 & 1.000 & 0.004 & 0.013\\
+Rural & 0.244 & 0.243 & 0.002 & - & 0.001 & 0.001\\
+\makecell[l]{Constrained Fin.\\Situation} & 0.281 & 0.269 & 0.027 & - & 0.012 & 0.012\\
+Higher Education & 0.352 & 0.358 & -0.013 & - & 0.006 & 0.006\\
+Employed & 0.579 & 0.584 & -0.010 & - & 0.005 & 0.005\\
+Married & 0.570 & 0.580 & -0.019 & - & 0.010 & 0.010\\
+Foreigner & 0.025 & 0.025 & 0.002 & - & 0.000 & 0.000\\
+Ethnic Minority & 0.513 & 0.512 & 0.003 & - & 0.001 & 0.001\\
+Interest in Politics & 0.663 & 0.658 & 0.011 & - & 0.005 & 0.005\\
+Political Ideology & 5.504 & 5.485 & 0.008 & 1.153 & 0.017 & 0.033\\
+\makecell[l]{Political Al.\\with Incumbent} & 0.117 & 0.121 & -0.012 & - & 0.004 & 0.004\\
+\makecell[l]{Civic Participation\\Score} & -2.499 & -2.570 & 0.015 & 1.015 & 0.010 & 0.024\\
+\midrule
+\textit{Sample sizes:} & \textit{Control} & \textit{Treated} & & & & \\
+All & 37,233 & 7,002 & & & & \\
+Matched & 7,002 & 7,002 & & & & \\
+Unmatched & 30,184 & 0 & & & & \\
+Discarded & 47 & 0 & & & & \\
+\bottomrule
+\end{talltblr}
+\end{table}

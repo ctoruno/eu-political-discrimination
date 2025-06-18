@@ -1,5 +1,5 @@
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-## Script:            Political Discrimination & Political Change
+## Script:            Political Discrimination & Political Change - Trust estimations
 ## Author(s):         Carlos A. Toruño Paniagua   (ctoruno@worldjusticeproject.org)
 ## Dependencies:      World Justice Project
 ## Creation date:     January 5th, 2025
@@ -106,12 +106,11 @@ fig_tsbd <- ggplot(
     y = "Trust in Political Institutions (Score)",
     x = "",
     caption = paste(
-      "The figure displays the distribution of the Trust in Political Institutions Index between individuals",
-      "that have experienced political discrimination\nor harrasment (D/H) and those who have not. The index scores",
-      "are estimated using a Logistic PCA reduction of the individual's answers\nto their levels of trust in local",
-      "authorities, national authorities, police, prosecutors, public defense attorneys, judges, magistrates,",
-      "political parties,\nand members of Parliament. The red area displays the 95% confidence interval of the",
-      "median score for each group."
+      "Note: The figure shows the distribution of Trust in Political Institutions Index scores for individuals who",
+      "experienced political discrimination\nor harassment (D/H) versus those who did not. Index scores are",
+      "derived from Logistic PCA of trust responses across nine institutional categories: local authorities,\n",
+      "national authorities, police, prosecutors, public defense attorneys, judges, magistrates, political parties,",
+      "and Parliament members.\nRed areas show 95% confidence intervals of median scores."
     )
   ) + 
   theme_minimal() +
@@ -296,10 +295,7 @@ marginal_effects <- lapply(
         ),
         escape = FALSE
       )
-      
-      
     }
-    
   }
 )
 

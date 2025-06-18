@@ -69,7 +69,7 @@ datasummary(
   align  = "llccccccc",
   output = "tables/tab_dicg.png",
   notes  = "*Note*: Table displays the percentage of respondents in each country that answered to have had experienced discrimination
-  or harrasment for each of the grounds presented to them.",
+  or harrasment for each of the grounds presented to them by the survey.",
   escape = TRUE
 )
   

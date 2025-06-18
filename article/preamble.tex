@@ -1,19 +1,26 @@
-\usepackage{tabularray}
+\usepackage{tabularray}[booktabs]
 \usepackage{float}
-\usepackage{multirow}
-\usepackage{array}
+\usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{codehigh}
+\usepackage[skip=12pt plus1pt, indent=0pt]{parskip}
 \usepackage[normalem]{ulem}
-\usepackage{adjustbox}
-\usepackage{tabu}
-\usepackage{longtable}
-\usepackage[para]{threeparttablex}
-\usepackage{tabularx}
-\usepackage[normalem]{ulem}
+\usepackage{authblk}
+\usepackage{ragged2e}
 \usepackage{makecell}
-\usepackage{booktabs}
-\usepackage{siunitx}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\UseTblrLibrary{booktabs}
+\UseTblrLibrary{siunitx}
 \newcommand{\tinytableTabularrayUnderline}[1]{\underline{#1}}
 \newcommand{\tinytableTabularrayStrikeout}[1]{\sout{#1}}
 \NewTableCommand{\tinytableDefineColor}[3]{\definecolor{#1}{#2}{#3}}

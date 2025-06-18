@@ -36,6 +36,19 @@ load_data <- function(path2EU, source){
             age %in% c(1,2) ~ 1,    # Luxembourg
             age %in% c(3,4,5,6) ~ 0 # Luxembourg
           ),
+          age_group = case_when(
+            age == 1 | (age >= 18 & age <= 24)  ~ "18-24",
+            age == 2 | (age >= 25 & age <= 34)  ~ "25-34",
+            age == 3 | (age >= 35 & age <= 44)  ~ "35-44",
+            age == 4 | (age >= 45 & age <= 54)  ~ "45-54",
+            age == 5 | (age >= 55 & age <= 64)  ~ "55-64",
+            age == 6 | (age >= 65 & age <= 100) ~ "65-100"
+          ),
+          age = case_when(
+            age < 18  ~ NA_integer_,
+            age > 100 ~ NA_integer_,
+            TRUE ~ age
+          ),
           fconst = case_when(
             fin %in% c(1,2) ~ 1,
             fin %in% c(3,4,98) ~ 0
@@ -51,6 +64,10 @@ load_data <- function(path2EU, source){
           left = case_when(
             polid %in% c(0,1,2,3) ~ 1,
             polid %in% c(4,5,6,7,8,9,10,98) ~ 0,
+          ),
+          center = case_when(
+            polid %in% c(4,5,6) ~ 1,
+            polid %in% c(0,1,2,3,7,8,9,10,98) ~ 0,
           ),
           right = case_when(
             polid %in% c(7,8,9,10) ~ 1,
@@ -76,6 +93,11 @@ load_data <- function(path2EU, source){
             nation == 1  ~ 0,
             nation == 2  ~ 1,
             nation == 98 ~ 0,
+          ),
+          polid = if_else(
+            polid > 10,
+            NA_integer_,
+            polid
           ),
           
           # Experiences of Political D/H

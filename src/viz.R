@@ -103,7 +103,9 @@ love_plot <- function(m.out1){
       shape = process
     )
   ) +
-    geom_point() +
+    geom_point(
+      size = 4
+    ) +
     geom_vline(
       xintercept = 0.05,
       linetype = "dotted",

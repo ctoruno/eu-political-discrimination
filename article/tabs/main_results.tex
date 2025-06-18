@@ -1,0 +1,29 @@
+\begin{table}[hbtp]
+\centering
+\caption{Effect of Political D/H Experiences on Institutional Trust}
+\label{table:4}
+\footnotesize
+\vspace{2mm}
+\begin{talltblr}[
+label=none,
+remark{Note} = {Table shows the results of regressing having experienced political discrimination or harrasment (D/H) on the level of trust in political institutions, measured as an index score. Model (I) includes only the treatment variable (D/H event) and region fixed effects. Model (II) adds demographic covariates, while model (III) and (IV) adds both demographic and political covariates. Model (IV) uses the full unmatched sample to fit the regression. *, **, and *** represent statistical significance at p < 0.05, p < 0.01, and p < 0.001, respectively. Standard Errors are clustered at the regional level and paired-units weights were used for regressions using the matched sample.},
+remark{Source} = {Eurovoices General Population Poll 2024},
+]
+{                     
+colspec={Q[l]Q[c]Q[c]Q[c]Q[c]},
+colsep=7pt
+}
+\toprule
+& (I) & (II) & (III) & (IV) \\ 
+\midrule
+D/H Experience & \num{-0.194}*** & \num{-0.191}*** & \num{-0.189}*** & \num{-0.159}*** \\
+Num.Obs. & \num{14004} & \num{14004} & \num{14004} & \num{44235} \\
+Adj. R.sq. & 0.074 & 0.090 & 0.110 & 0.101 \\
+Adj. Within R.sq. & 0.022 & 0.039 & 0.060 & 0.046 \\
+Region FE & X & X & X & X \\
+Dem. Cov. &  & X & X & X \\
+Pol. Cov. &  &  & X & X \\
+Sample & Matched & Matched & Matched & Full \\
+\bottomrule
+\end{talltblr}
+\end{table}

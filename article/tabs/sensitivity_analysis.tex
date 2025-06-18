@@ -1,0 +1,23 @@
+\begin{table}[hbtp]
+\centering
+\caption{Sensitivity Analysis: Main Results}
+\label{table:5}
+\footnotesize
+\vspace{2mm}
+\begin{talltblr}[
+label=none,
+% remark{Note} = {Table shows the results of regressing having experienced political discrimination or harrasment (D/H) on the level of trust in political institutions, measured as an index score. Model (I) includes only the treatment variable (D/H event) and region fixed effects. Model (II) adds demographic covariates, while model (III) and (IV) adds both demographic and political covariates. Model (IV) uses the full unmatched sample to fit the regression. *, **, and *** represent statistical significance at p < 0.05, p < 0.01, and p < 0.001, respectively. Standard Errors are clustered at the regional level and paired-units weights were used for regressions using the matched sample.},
+remark{Source} = {Eurovoices General Population Poll 2024},
+]
+{                     
+colspec={Q[l]Q[c]Q[c]Q[c]Q[c]Q[c]Q[c]},
+colsep=4pt
+}
+\toprule
+\textbf{Treatment:} & \textbf{Est.} & \textbf{S.E.} & \textbf{t-value} & $R^2_{Y \sim D |{\bf X}}$ & $RV_{q = 1}$ & $RV_{q = 1, \alpha = 0.05}$  \\ 
+\midrule 
+\textit{D/H Experience} & -0.209 & 0.012 & -17.523 & 2.2\% & 13.8\% & 12.4\% \\ 
+\bottomrule 
+df = 13,880 & & \SetCell[r=1,c=5]{r} { \small \textit{Bound (2x incpp)}: $R^2_{Y\sim Z| {\bf X}, D}$ = 1.8\%, $R^2_{D\sim Z| {\bf X} }$ = 0\%} \\
+\end{talltblr}
+\end{table}

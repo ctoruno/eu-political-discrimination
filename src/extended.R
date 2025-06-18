@@ -170,10 +170,10 @@ m.out1 <- matchit(
 ## Post-matching Balance Table
 balance_assessment(m.out1, initial = FALSE)
 
-plot(
-  summary(m.out1, addlvariables = ~ I(age^2) + I(polid^2)), 
-  var.order = "unmatched"
-)
+## Post-matching love plot
+love_plot(m.out1)
+
+## Extracting matched data
 matched_data <- match_data(m.out1)
 
 
@@ -183,31 +183,66 @@ matched_data <- match_data(m.out1)
 ##
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-fe_model <- paste(
-  "trt_score_scaled ~ poldis +", 
-  paste(dem_vars, collapse = " + "), "+",
-  paste(pol_vars, collapse = " + "), "+",
-  "cp_score + age^2 | nuts_id"
+fe_models <- list(
+  "(I)" = paste0(
+    "log(trt_score_scaled) ~ poldis | nuts_id"
+  ),
+  "(II)" = paste0(
+    "log(trt_score_scaled) ~ poldis + ", 
+    paste(dem_vars, collapse = " + "), " + ", 
+    "age^2 | nuts_id"
+  ),
+  "(III)" = paste0(
+    "log(trt_score_scaled) ~ poldis + ", 
+    paste(dem_vars, collapse = " + "), " + ",
+    paste(pol_vars, collapse = " + "), " + ", 
+    "age^2 + polid^2 | nuts_id"
+  ),
+  "(IV)" = paste0(
+    "log(trt_score_scaled) ~ poldis + ", 
+    paste(dem_vars, collapse = " + "), " + ",
+    paste(pol_vars, collapse = " + "), " + ", 
+    "age^2 + polid^2 | nuts_id"
+  )
 )
-fitted_model <- feols(
-  as.formula(fe_model),
-  data = matched_data,
-  cluster = ~subclass,
-  weights = matched_data$weights
-)
-summary(fitted_model)
 
-mgeffects <- avg_comparisons(
-  fitted_model,
-  variables = "poldis",
-  transform = expm1,
-  newdata = subset(poldis == 1)
+fe_models_fit <- imap(
+  fe_models,
+  function(x, model){
+    
+    if (model %in% c("(IV)")){
+      fitted_model <- feols(
+        as.formula(x),
+        data = study_data,
+        cluster = ~nuts_id
+      )
+    } else {
+      fitted_model <- feols(
+        as.formula(x),
+        data = matched_data,
+        cluster = ~subclass,
+        weights = matched_data$weights
+      )
+    }
+    
+    mgeffects <- avg_comparisons(
+      fitted_model,
+      variables = "poldis",
+      transform = expm1,
+      newdata = subset(poldis == 1)
+    )
+    
+    return(
+      list(
+        "fit" = fitted_model,
+        "mge" = mgeffects
+      )
+    )
+  }
 )
-modelsummary(
-  mgeffects,
-  stars     = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
-  gof_omit  = "R2|RMSE|AIC|BIC"
-)
+
+## FEOLS Main Results Table
+main_results_feols(fe_models_fit)
 
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -229,15 +264,20 @@ psens_res <- psens(
 
 ## Coefficient-Stability Bounds
 poldis.sensitivity <- sensemakr(
-  model = fitted_model, 
+  model = fe_models_fit[["(III)"]][["fit"]], 
   treatment = "poldis",
   benchmark_covariates = c("incpp"),
-  kd = 1:10
+  kd = c(1,5,10,15)
 )
-poldis.sensitivity
-ovb_minimal_reporting(poldis.sensitivity, format = "html")
-plot(poldis.sensitivity)
-plot(poldis.sensitivity, type = "extreme")
+summary(poldis.sensitivity)
+
+## Sensitivity Analysis Table
+sensitivity_analysis(poldis.sensitivity)
+
+## Sensitivity Analysis Fxigure
+png("viz/sensitivity_analysis.png", width = 6, height = 6, units = "in", res = 300)
+plot(poldis.sensitivity, type = "contour")
+dev.off()
 
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

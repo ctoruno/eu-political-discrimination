@@ -72,7 +72,8 @@ The propensity score is estimated using two sets of covariates: demographic vari
 Once we have a fully matched study sample, we estimate the effect of having experienced a D/H event on the levels of trust in political institutions through the following specification:
 
 \begin{equation}
-Y_{ic} = \alpha + \tau X_{ic} + \mathbf{Z}_{ic}'\mathbf{\beta} + \gamma_c + \varepsilon_{ic}
+\label{eq:1}
+log(Y_{ic}) = \alpha + \tau X_{ic} + \mathbf{Z}_{ic}'\mathbf{\beta} + \gamma_c + \varepsilon_{ic}
 \end{equation}
 
 Where:
@@ -89,6 +90,12 @@ Where:
 This specification is estimated using fixed effects OLS regression\footnote{The estimation of the fixed effects was performed using the fixest R package (Bergé, 2018).}. The value of \( \tau \) can be interpreted as the Average Treatment Effect on the Treated (ATT)\footnote{The Average Treatment Effect (ATE) and the Average Treatment Effect on the Treated (ATT) are two foundational metrics in causal inference. ATE represents the average effect of a treatment across the entire population, whereas ATT focuses only on the average effect among individuals who actually received the treatment.} provided that the conditional ignorability (unconfoundedness) assumption holds (Abadie and Cattaneo, 2018; Greifer and Stuart, 2010).
 
 The unconfoundedness assumption requires that treatment assignment be independent of potential outcomes conditional on the set of observed covariates included. However, even when matching achieves balance in observed covariates, unobserved confounders remain a threat to causal identification. Unobserved variables that relate to both experiencing D/H events and trust in political institutions would violate the unconfoundedness assumption and bias our treatment effect estimates. Since conditional ignorability cannot be directly tested, the literature suggests performing sensitivity analyses to assess the plausibility of this assumption and determine how sensitive our estimated effects are to violations of unconfoundedness (Stuart, 2010).
+
+We use the framework proposed by Cinelli and Hazlett (2020) to assess how fragile are our main results to the possibility of unobserved confounding. This framework allows us to estimate the minimum strength of an unobserved confounder that would be required to nullify our estimated treatment effect. We also assess the robustness of our results to violations of the unconfoundedness assumption by estimating the treatment effect under different levels of unobserved confounding.
+
+We use two measures to test the sensitivity of our results: the robustness value, indicating the minimum confounding strength needed to alter our conclusions, and the partial R2 of the treatment, showing how strongly confounders must be associated with the treatment to completely override our results (Cinelli and Hazlett, 2020).
+
+Finally, we explore whether political polarization acts as a transmission channel for the effect of political discrimination and harassment on trust in political institutions. We hypothesize that individuals who experience D/H events may become more politically polarized, which in turn could lead to lower levels of trust in political institutions. To test this hypothesis, we include a measure of political polarization in our regression model and assess its interaction with the D/H event variable.
 
 \section{Results}
 
@@ -121,9 +128,33 @@ As a result of the matching procedure, our sample size was reduced from 44,235 i
 
 \subsection{The effect of political discrimination and harassment on trust in political institutions}
 
-When matching achieves balance across observed covariates, it suggests that the treatment and control groups are comparable in ways that validate the assumptions necessary for causal inference (Branson, 2021). However, balance represents a necessary but not sufficient condition for causality, as unobserved confounders may still bias our estimates.
+To estimate the effect of political discrimination and harrasment on trust in political institutions, we estimate four different specifications of \ref{eq:1}. The first specification includes only the treatment variable (D/H event) and region fixed effects. The second specification adds demographic covariates, while the third specification adds both demographic and political covariates. The fourth specification replicates the third one, but it fits the model using the full unmatched sample. The results of these estimations are presented in Table \ref{table:4}.
+
+\input{"tabs/main_results.tex"}
+
+As we can observe, the coefficient for the D/H event variable is negative and statistically significant in all specifications. This indicates that experiencing political discrimination or harassment has a negative effect on trust in political institutions. Furthermore, the magnitude of this effect is consistent across specifications, ranging from -0.159 to -0.194, depending on the model. This means that individuals who have experienced political discrimination or harassment tend to have between 16\% and 19\% lower levels of trust in political institutions compared to those who have not experienced such events. 
+
+Interestingly, the magnitude of the coefficient is slightly smaller when using the full unmatched sample, which suggests that the bias introduced by using the full sample tends to underestimate the effect of political discrimination and harassment on trust in political institutions.
+
+Using a matched sample has allowed us to improve the precision of our estimates. However, achieving a balance in covariates using a matching procedure suggests that the treatment and control groups are comparable in ways that are more aligned with the assumptions necessary for causal inference (Branson, 2021). However, balance represents a necessary but not sufficient condition for causality, as unobserved confounders may still bias our estimates. Therefore, we perform a sensitivity analysis to assess the robustness of our results to potential violations of the unconfoundedness assumption.
 
 \subsection{Sensitivity analysis}
+
+To assess the robustness of our results to potential violations of the unconfoundedness assumption, we perform a sensitivity analysis using the framework proposed by Cinelli and Hazlett (2020). This framework allows us to estimate the minimum strength of an unobserved confounder that would be required to nullify our estimated treatment effect. We also assess the robustness of our results to violations of the unconfoundedness assumption by estimating the treatment effect under different levels of unobserved confounding. Table \ref{table:5} presents the main results of the sensitivity analysis.\footnote{The results presented in this section were perfomed using the sensemakr R package (Cinelli et al., 2024).}
+
+According to our results, the robustness value ($RV_{q = 1}$) is 13.8\%, which means that an unobserved confounder—orthogonal to the current set of covariates—would need to explain at least 13.8\% of the variance in experiencing political discrimination or harassment (D/H) to nullify our estimated treatment effect.
+
+Similarly, the robustness value for testing the null hypothesis that the treatment effect is zero ($RV_{q = 1, \alpha = 0.05}$) is 12.4\%. This means that an unobserved confounder—orthogonal to the current set of covariates—would need to explain at least 12.4\% of the variance in experiencing D/H events to make our treatment effect statistically insignificant at the 5\% level.
+
+Finally, the partial R2 of the treatment ($R^2_{Y\sim D| {\bf X}, D}$) is 3.5\%, which indicates that an unobserved confounder would need to explain at least 3.5\% of the variance in trust in political institutions to nullify our estimated treatment effect.
+
+These levels are relatively high. However, it is very difficult to know how strong are the unobserved factors that we are not capturing in our data without domain knowledge or a valid comparison with the factors that are able to capture with our data. Therefore, we will compare this results to the levels of an observed confounder. More specifically, political alignment with the incumbent party. We use political alignment as a benchmark given that it is hard to imagine that our data is omitting a variable that is equally or strongly related to trust in political institutions than political alignment. 
+
+Table \ref{table:5} also shows that an important confounder such as political alignment with the incumbent party (\emph{incpp}) is only able to explain 1.8\% of the variance in trust in political institutions, which is lower than the partial R2 of the treatment. Given that this value is below the RV for experiencing D/H events, we can conclude that our results are robust to the possibility of unobserved confounding.
+
+\input{"tabs/sensitivity_analysis.tex"}
+
+Our analysis indicates that our findings are still valid even if we are omitting a confounder that can explain 15 times the variance in trust in political institutions that is currently explained by political alignment with the incumbent party, as shown in Appendix \ref{appendix:d}. Moreover, the magnitude of the effect remains stable even in the presence of such hypothetical shock. This suggests that our results are robust to the possibility of unobserved confounding, at least to the extent that political alignment with the incumbent party is a valid benchmark.
 
 \subsection{Polarization as the transmission channel}
 
@@ -141,7 +172,7 @@ When matching achieves balance across observed covariates, it suggests that the 
 \input{"tabs/initial_balance.tex"}
 
 \newpage
-\section{Post-Matching Covariate Balance Assessment: Love Plot}
+\section{Matching Covariate Balance Assessment}
 \label{appendix:c}
 \begin{figure}[htbp]
 \centering
@@ -150,6 +181,20 @@ When matching achieves balance across observed covariates, it suggests that the 
 \medskip
 \justifying\footnotesize 
 \textit{Note:} The figure shows the Absolute Std. Mean Diff. for each covariate before (full sample) and after matching. The dashed and dotted lines represent the thresholds of 0.1 and 0.05, respectively, for good balance. The figure indicates that the matching procedure has significantly improved the balance of covariates between the treatment and control groups.
+
+\textit{Source:} Eurovoices General Population Poll 2024
+\end{figure}
+
+\newpage
+\section{Sensitivity contour plots of point estimates}
+\label{appendix:d}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{"viz/sensitivity_analysis.png"}
+
+\medskip
+\justifying\footnotesize 
+\textit{Note:} The figure shows hypothetical sensitivity contours for the point estimates of the treatment effect of political discrimination and harassment on trust in political institutions. The contours represent the hypothetical residual share of variation of the treatment that an unobserved confounding explains (x-axis) and the the hypothetical partial $R^2$ of an unobserved confounding with the outcome (y-axis). The red line represents the level at which the unobserved confounding would nullify our results. The magnitude of the coefficient of interest (ATT) is shown within parenthesis.
 
 \textit{Source:} Eurovoices General Population Poll 2024
 \end{figure}

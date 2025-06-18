@@ -1,0 +1,23 @@
+\begin{table}
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]},
+column{2,3,4,5}={}{halign=c,},
+column{1}={}{halign=l,},
+hline{3}={1,2,3,4,5}{solid, black, 0.05em},
+}                     %% tabularray inner close
+\toprule
+& (I) & (II) & (III) & (IV) \\ \midrule %% TinyTableHeader
+D/H Experience & \num{-0.194}*** & \num{-0.191}*** & \num{-0.189}*** & \num{-0.159}*** \\
+Num.Obs. & \num{14004} & \num{14004} & \num{14004} & \num{44235} \\
+Adj. R.sq. & 0.074 & 0.090 & 0.110 & 0.101 \\
+Adj. Within R.sq. & 0.022 & 0.039 & 0.060 & 0.046 \\
+Region FE & X & X & X & X \\
+Dem. Cov. &  & X & X & X \\
+Pol. Cov. &  &  & X & X \\
+Sample & Matched & Matched & Matched & Full \\
+\bottomrule
+\end{tblr}
+\end{table}

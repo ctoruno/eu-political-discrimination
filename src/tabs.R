@@ -212,3 +212,83 @@ balance_assessment <- function(balance, initial=TRUE){
   
   return(TRUE)
 }
+
+
+main_results_feols <- function(fitted_models){
+  
+  results <- lapply(
+    fitted_models,
+    function(x){
+      x[["mge"]]
+    }
+  )
+  
+  coef_map = c(
+    "poldis" = "D/H Experience"
+  )
+  
+  rsq_list <- lapply(
+    fitted_models,
+    function(x){
+      format(
+        round(
+          fitstat(x$fit, "ar2")[[1]],
+          3
+        ),
+        nsmall = 3
+      )
+    }
+  )
+  
+  wrsq_list <- lapply(
+    fitted_models,
+    function(x){
+      format(
+        round(
+          fitstat(x$fit, "wr2")[[1]],
+          3
+        ),
+        nsmall = 3
+      )
+    }
+  )
+  
+  awrsq_list <- lapply(
+    fitted_models,
+    function(x){
+      format(
+        round(
+          fitstat(x$fit, "awr2")[[1]],
+          3
+        ),
+        nsmall = 3
+      )
+    }
+  )
+  
+  extra_info <- tibble(
+    term    = c("Adj. R.sq.", "Adj. Within R.sq.", "Region FE", "Dem. Cov.", "Pol. Cov.", "Sample"),
+    `(I)`   = c(rsq_list[[1]], awrsq_list[[1]], "X", "", "", "Matched"),
+    `(II)`  = c(rsq_list[[2]], awrsq_list[[2]], "X", "X", "", "Matched"),
+    `(III)` = c(rsq_list[[3]], awrsq_list[[3]], "X", "X", "X", "Matched"),
+    `(IV)`  = c(rsq_list[[4]], awrsq_list[[4]], "X", "X", "X", "Full"),
+  )
+  
+  modelsummary(
+    results,
+    estimate  = "{estimate}{stars}",
+    stars     = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
+    gof_omit  = "R2|RMSE|AIC|BIC|FE",
+    coef_map  = coef_map,
+    add_rows  = extra_info,
+    output    = "tex/main_results.tex"
+  )
+  
+  return(TRUE)
+}
+
+
+sensitivity_analysis <- function(output){
+  tex.output = ovb_minimal_reporting(output, format = "latex")
+  writeLines(tex.output, "tex/sensitivity_analysis.tex")
+}

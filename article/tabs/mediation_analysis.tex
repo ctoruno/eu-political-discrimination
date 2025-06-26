@@ -1,0 +1,24 @@
+\begin{table}[hbtp]
+\centering
+\caption{Mediation Analysis Results}
+\label{table:6}
+\footnotesize
+\vspace{2mm}
+\begin{talltblr}[
+label=none,
+remark{Note} = {Table shows the results of the mediation analysis. The ACME (Average Causal Mediation Effect) measures the indirect effect of having experienced D/H events on trust in political institutions through our measure of affective polarization (\emph{mediator}). The ADE (Average Direct Effect) measures the direct effect on the outcome. The Total Effect is the sum of the ACME and ADE. The Prop. Mediated is the proportion of the total effect that is mediated through the mediator. *, **, and *** represent statistical significance at $p < 0.05$, $p < 0.01$, and $p < 0.001$, respectively. Estimates shown in the table tested using a bootstrapping approach with 10,000 replications.},
+remark{Source} = {Eurovoices General Population Poll 2024},
+]
+{                     
+colspec={Q[l]Q[c]Q[c]Q[c]Q[c]},
+}                   
+\toprule
+& Estimate & 95\% CI Lower & 95\% CI Upper & p-value\\
+\midrule
+ACME & -0.006 & -0.013 & -0.001 & \num{0.02}*\\
+ADE & -0.857 & -0.945 & -0.770 & \num{0.00}***\\
+Total Effect & -0.863 & -0.951 & -0.776 & \num{0.00}***\\
+Prop. Mediated & 0.007 & 0.001 & 0.015 & \num{0.02}*\\
+\bottomrule
+\end{talltblr}
+\end{table}

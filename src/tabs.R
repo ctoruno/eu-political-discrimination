@@ -292,3 +292,144 @@ sensitivity_analysis <- function(output){
   tex.output = ovb_minimal_reporting(output, format = "latex")
   writeLines(tex.output, "tex/sensitivity_analysis.tex")
 }
+
+
+mediation_analysis <- function(mediation_results){
+  
+  ## Table Columns
+  estimates = c(
+    mediation_results$d.avg, 
+    mediation_results$z.avg, 
+    mediation_results$tau.coef, 
+    mediation_results$n.avg
+  )
+  
+  ci_lower = c(
+    mediation_results$d.avg.ci[["2.5%"]],
+    mediation_results$z.avg.ci[["2.5%"]],
+    mediation_results$tau.ci[["2.5%"]],
+    mediation_results$n.avg.ci[["2.5%"]]
+  )
+  
+  ci_upper = c(
+    mediation_results$d.avg.ci[["97.5%"]],
+    mediation_results$z.avg.ci[["97.5%"]],
+    mediation_results$tau.ci[["97.5%"]],
+    mediation_results$n.avg.ci[["97.5%"]]
+  )
+  
+  pvalue = c(
+    mediation_results$d.avg.p, 
+    mediation_results$z.avg.p, 
+    mediation_results$tau.p, 
+    mediation_results$n.avg.p
+  )
+  
+  ## Data Frame
+  df = data.frame(
+    estimates, ci_lower, ci_upper, pvalue
+  )
+  names(df) <- c(
+    "Estimate",
+    "95% CI Lower",
+    "95% CI Upper",
+    "p-value"
+  )
+  row.names(df)<-c(
+    "ACME",
+    "ADE",
+    "Total Effect",
+    "Prop. Mediated"
+  )
+  
+  ## Kable
+  t = kbl(
+    df,
+    booktabs = TRUE,
+    format = "latex",
+    digits = 3
+  )
+  writeLines(t, "tex/mediation_analysis.tex")
+  
+  return(TRUE)
+}
+
+
+het.effects <- function(output){
+  
+  ## Data Frame
+  df = output %>%
+    select(c(3:5, 7,8)) %>%
+    mutate(
+      incpp = if_else(
+        incpp == 1,
+        "Incumbent",
+        "Non-Incumbent"
+      ),
+      viz = ""
+    )
+  names(t) <- c("Political Alignment", "Estimate", "Pr(>|z|)", "95% CI Lower",  "95% CI Upper", " ")
+  
+  ## Kable
+  t = kbl(
+    df,
+    booktabs = TRUE,
+    format = "latex",
+    digits = 3
+  ) %>%
+    kable_styling(full_width = FALSE) %>%
+    column_spec(
+      6,
+      image = spec_pointrange(
+        x=output$estimate, 
+        xmin=output$conf.low, 
+        xmax= output$conf.high, 
+        vline=0
+      ) 
+    )
+  writeLines(t, "tex/het_effects.tex")
+  
+  return(TRUE)
+}
+
+
+het.effects.dissonance <- function(output){
+  
+  ## Data Frame
+  df = output %>%
+    select(c(3:6, 8,9)) %>%
+    mutate(
+      incpp = if_else(
+        incpp == 1,
+        "Incumbent",
+        "Non-Incumbent"
+      ),
+      high_dist2avg.polid = if_else(
+        high_dist2avg.polid == 1,
+        "High",
+        "Low"
+      ),
+      viz = ""
+    )
+  names(df) <- c("Political Dissonance", "Political Alignment", "Estimate", "Pr(>|z|)", "95% CI Lower",  "95% CI Upper", " ")
+  
+  ## Kable
+  t = kbl(
+    df,
+    booktabs = TRUE,
+    format = "latex",
+    digits = 3
+  ) %>%
+    kable_styling(full_width = FALSE) %>%
+    column_spec(
+      7,
+      image = spec_pointrange(
+        x=output$estimate, 
+        xmin=output$conf.low, 
+        xmax= output$conf.high
+      ) 
+    )
+  writeLines(t, "tex/het_effects_dissonance.tex")
+  
+  return(TRUE)
+}

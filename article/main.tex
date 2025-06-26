@@ -5,7 +5,7 @@
 \title{The Cost of Exclusion: Political Discrimination and Trust Deficits in the European Union}
 
 \author[1]{Carlos A. Toruño Paniagua}
-\author[2]{...}
+\author[2]{Santiago Pardo González}
 \affil[1,2]{\emph{The World Justice Project}}
 \date{June 2025}
 
@@ -23,25 +23,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus sagittis
 
 \section{Data}
 
-This study uses microdata from general population surveys collected in all 27 European Union Member States as part of the EUROVOICES project, conducted by The World Justice Project. The dataset provides statistically representative coverage across 110 subnational regions throughout the European Union, offering comprehensive geographic representation of the EU population.
+This study uses microdata from general population surveys collected in all 27 European Union Member States as part of the \emph{EUROVOICES} project, conducted by The World Justice Project.\footnote{The World Justice Project \emph{EUROVOICES} was a data collection effort that aimed to evaluate, analyze, and map out national and regional variations in how people in the EU perceive and experience democratic governance, fundamental rights, justice, safety, corruption, transparency, regulatory enforcement, and the business climate (See WJP, 2024).} The dataset provides statistically representative coverage across 110 subnational regions throughout the European Union, offering comprehensive geographic representation of the EU population.
 
-The World Justice Project produced subnational information following the framework of territorial divisions established by the Nomenclature of Territorial Units for Statistics (NUTS) system. In each covered country, one level of this system of nested territorial divisions was selected, resulting in a total of 110 subnational regions for which data are presented. It should be noted that the level of statistical representation varies between countries.
+The World Justice Project produced subnational information following the framework of territorial divisions established by the Nomenclature of Territorial Units for Statistics (NUTS) system. In each covered country, one level of this system of nested territorial divisions was selected (NUTS-1 or NUTS-2), resulting in a total of 110 subnational regions. It should be noted that the level of statistical representation varies between countries.
 
-The surveys were administered to respondents in 110 regions of the 27 EU Member States. Data collection employed mixed methodologies, with face-to-face interviews conducted in ten countries and online polling utilized in 17 countries. Survey respondents in each country were selected using probability sampling methods designed to ensure representativeness across key sociodemographic criteria, including age, sex, income level, and degree of urbanization (categorized as urban and rural areas). Detailed information on sample sizes for each country, survey methodology employed, data collection periods, and representation levels can be found in Appendix \ref{appendix:a}.
+The surveys were administered to respondents in 110 regions of the 27 EU Member States. Data collection employed mixed methodologies, with face-to-face interviews conducted in ten countries and online polling conducted in 17 countries. Survey respondents in each country-region were selected using probability sampling methods designed to ensure representativeness across key sociodemographic criteria, including age, sex, income level, and degree of urbanization (categorized as urban and rural areas). Detailed information on sample sizes for each country, survey methodology employed, data collection periods, and representation levels can be found in Appendix \ref{appendix:a}.
 
-However, due to missing values across the variables of interest, the effective analytical sample for this study is smaller than the total sample published by The World Justice Project. Table \ref{table:1} presents descriptive statistics for the key demographic and political variables among survey respondents included in the final sample.
+However, due to missing values across the variables of interest, the effective analytical sample for this study is smaller than the total sample published by The World Justice Project. Table \ref{table:1} presents descriptive statistics for the key demographic and political variables among survey respondents included in the study \emph{full} sample.
 
 \input{"tabs/descriptive_stats.tex"}
 
-The EUROVOICES survey includes a comprehensive discrimination module that measures 11 different grounds for discrimination: sex, age, disability, ethnicity, migration background, socioeconomic status, religion, and political opinion. Participants indicated whether they experienced discrimination or harassment (D/H) based on any of these characteristics during the 12 months before the survey, and identified where such incidents took place. Since each discrimination ground was assessed independently, individual respondents could report multiple types of discriminatory experiences within the year prior to survey administration.
+The \emph{EUROVOICES} survey includes a comprehensive discrimination module that measures 11 different grounds for discrimination: sex, age, disability, ethnicity, migration background, socioeconomic status, religion, and political opinion. Participants indicated whether they experienced discrimination or harassment (D/H) based on any of these characteristics during the 12 months before the survey, and identified where such incidents took place. Since each discrimination ground was assessed independently, individual respondents could report multiple types of discriminatory experiences within the year prior to survey administration.
 
-The survey also includes a comprehensive Trust module asking respondents to rate their trust levels in various public institutions as "a lot," "some," "little," or "no trust." These institutions include local and national government officials, police officers, prosecutors, public defense attorneys, judges, magistrates, political parties, and Parliament members. We recoded these responses into binary indicators, where "a lot" and "some trust" equal 1, and "a little" and "no trust" equal 0. To construct a comprehensive measure of political trust, we created a Trust in Political Institutions Index through Logistic Principal Component Analysis (Landgraf \& Lee, 2020), which aggregates individual trust responses across all measured institutions.
+The survey also includes a comprehensive Trust module asking respondents to rate their trust levels in various public institutions as ``a lot", ``some", ``a little", or ``no trust". These institutions include local and national government officials, police officers, prosecutors, public defense attorneys, judges, magistrates, political parties, and Parliament members. We recoded these responses into binary indicators, where ``a lot" and ``some trust" equal 1, and ``a little" and ``no trust" equal 0. To construct a comprehensive measure of political trust, we created a Trust in Political Institutions Index through Logistic Principal Component Analysis (Landgraf \& Lee, 2020), which aggregates individual trust responses across all measured institutions.
 
 Finally, as displayed in Table \ref{table:1}, the survey not only collects important demographic data but it also asks respondents key political traits such as their interest in politics, vote intention, and it also asks people to rate their political ideology from 0 to 10, where 0 is associated with a far left ideology and 10 is associated with a far right ideology.
 
 \section{Discrimination Experiences in the European Union}
 
-Data from the World Justice Project EUROVOICES household survey reveals that discrimination represents a significant challenge throughout the European Union. In most EU regions, over 25\% of respondents reported experiencing some form of discrimination within the previous year. Table \ref{table:2} displays the prevalence of self-reported discrimination across EU Member States, categorized by the grounds for discrimination.
+Data from the World Justice Project \emph{EUROVOICES} household survey reveals that discrimination represents a significant challenge throughout the European Union. In most EU regions, over 25\% of respondents reported experiencing some form of discrimination within the previous year. Table \ref{table:2} displays the prevalence of self-reported discrimination across EU Member States, categorized by the grounds for discrimination.
 
 Political discrimination represents the most frequently reported form of discrimination in 13 of the 27 members, surpassing discrimination based on sex, ethnicity, or migration status. The highest rates are observed in Hungary (34.5\%), Czechia (28.7\%), Slovakia (26.5\%), Austria (25.3\%), and Germany (24.4\%), while Portugal (2.6\%) and Bulgaria (1.5\%) show considerably lower prevalence. Across the EU, an average of 14.7\% of respondents have encountered political discrimination.
 
@@ -53,11 +53,11 @@ These findings indicate that political discrimination constitutes a prominent an
 
 \section{Methodology}
 
-The main objective of this study is to examine whether experiencing discrimination or harassment (D/H) due to political opinions has a causal effect on trust in political institutions. However, a fundamental challenge in causal inference is that assessing the causal effect of these experiences would require observing both potential outcomes in the same individual—those who experienced D/H and those who did not. Since we never observe both potential outcomes for any individual, we must infer the effects of discrimination and harassment by comparing average trust levels between those who experienced such events and those who did not.
+The main objective of this study is to examine whether experiencing discrimination or harassment (D/H experiences)\footnote{Throughout the remainder of this document, political discrimination or harassment will be referred to as D/H experiences or events.} due to political opinions has a causal effect on trust in political institutions. However, a fundamental challenge in causal inference is that assessing the causal effect of these experiences would require observing both potential outcomes in the same individual—those who experienced a D/H event and those who did not. Since we never observe both potential outcomes for any individual, we must infer the effects of political discrimination and harassment by comparing average trust levels between those who experienced such events and those who did not.
 
-The problem is that people who experience political discrimination or harassment might be systematically different from those who do not. For example, individuals who experience D/H events might be more interested in and informed about politics, or display higher levels of civic participation. If these systematic differences correlate with institutional trust levels, then a naïve comparison between the two groups would be misleading. This is known as the selection problem (Angrist \& Pischke, 2009).
+The problem is that people who experience political discrimination or harassment might be systematically different from those who do not. For example, individuals who experience such events might be more interested in and informed about politics, or display higher levels of civic participation. If these systematic differences correlate with institutional trust levels, then a naïve comparison between the two groups would be misleading. This is known as the selection problem (Angrist \& Pischke, 2009).
 
-Researchers typically turn to randomized controlled experiments—the gold standard for causal inference—to address such questions. However, the nature of this research question makes it both practically difficult and ethically problematic to randomly expose individuals to discrimination or harassment based on their political views. As a result, we adopt quasi-experimental designs to examine the causal effects of political discrimination and harassment on institutional trust [citations needed].
+Researchers typically turn to randomized controlled experiments—the gold standard for causal inference—to address such questions. However, the nature of our research question makes it both practically difficult and ethically problematic to randomly expose individuals to discrimination or harassment based on their political views. As a result, we adopt quasi-experimental designs to examine the causal effects of political discrimination and harassment on institutional trust [citations needed?].
 
 For this study, we implement the matching methodology suggested by Ho et al. (2007) to preprocess our observational data. Our goal is to balance the distribution of covariates between our treatment group (people who experienced D/H events) and control group (people who have not), thereby replicating the randomization achieved in an experimental study (Stuart, 2010).
 
@@ -65,9 +65,9 @@ While regression methods can also address confounding from measured covariates, 
 
 Importantly, we use matching as a preprocessing method to improve balance between groups, rather than as an imputation method for estimating missing outcomes, as described by Abadie and Imbens (2006, 2016).
 
-We performed nearest neighbor matching\footnote{The matching estimation was performed using the MatchIT R package (Ho et al., 2011).} based on the propensity score, defined as the probability of experiencing a D/H event conditional on a set of observed covariates (Rubin, 1973; Rosenbaum and Rubin, 1983). We estimate this probability using logistic regression. Each unit from the treatment group is matched with the control group unit that has the closest propensity score (1:1 matching). Matching was performed without replacement.\footnote{Matching with replacement means that each control unit can be reused to be matched with any number of treated units if that individual is the closest neighbor to multiple treatment units.} We also establish a region of common support\footnote{The common support region refers to the range of covariate values (or propensity scores) where both treated and control units have sufficient representation.} and discard units that fall outside this region.\footnote{All treatment units fell within the common support region, resulting only in exclusion of individuals from the control group, i.e., people who did not experience political discrimination or harassment.}
+We performed nearest neighbor matching\footnote{The matching estimation was performed using the MatchIT R package (Ho et al., 2011).} based on the propensity score, defined as the probability of experiencing a D/H event conditional on a set of observed covariates (Rubin, 1973; Rosenbaum and Rubin, 1983). We estimate this probability using a logistic regression. Each unit from the treatment group is matched with the control group unit that has the closest propensity score (1:1 matching without replacement)\footnote{Matching with replacement means that each control unit can be reused to be matched with any number of treated units if that individual is the closest neighbor to multiple treatment units. Matching without replacement means that each control unit can only be matched with one single treated unit.}. We also establish a region of common support\footnote{The common support region refers to the range of covariate values (or propensity scores) where both treated and control units have sufficient representation.} and discard units that fall outside this region.\footnote{All treatment units fell within the common support region, resulting only in exclusion of individuals from the control group, i.e., people who did not experience political discrimination or harassment.}
 
-The propensity score is estimated using two sets of covariates: demographic variables (geographic region\footnote{Equivalent to one of the 110 NUTS regions in the study.}, sex, age, area of residence, financial situation, education level, employment status, marital status, citizenship status, and ethnic group) and political variables (interest level in politics, political ideology, and political alignment). All covariates and their possible values are listed in Table \ref{table:1}.
+The propensity score is estimated using two sets of covariates: demographic variables (geographic region,\footnote{Equivalent to one of the 110 NUTS regions in the study.} sex, age, area of residence, financial situation, education level, employment status, marital status, citizenship status, and ethnic group) and political variables (interest level in politics, political ideology, and political alignment). All covariates and their possible values are listed in Table \ref{table:1}.
 
 Once we have a fully matched study sample, we estimate the effect of having experienced a D/H event on the levels of trust in political institutions through the following specification:
 
@@ -95,7 +95,52 @@ We use the framework proposed by Cinelli and Hazlett (2020) to assess how fragil
 
 We use two measures to test the sensitivity of our results: the robustness value, indicating the minimum confounding strength needed to alter our conclusions, and the partial R2 of the treatment, showing how strongly confounders must be associated with the treatment to completely override our results (Cinelli and Hazlett, 2020).
 
-Finally, we explore whether political polarization acts as a transmission channel for the effect of political discrimination and harassment on trust in political institutions. We hypothesize that individuals who experience D/H events may become more politically polarized, which in turn could lead to lower levels of trust in political institutions. To test this hypothesis, we include a measure of political polarization in our regression model and assess its interaction with the D/H event variable.
+Finally, we investigate the mechanisms through which political discrimination and harassment affect trust in political institutions. We explore two potential pathways: political polarization and political alignment.
+
+Regarding political polarization, we hypothesize that individuals who experience D/H events may become more politically polarized, which in turn could lead to lower levels of trust in political institutions. To test this hypothesis, we include a measure of political polarization in our regression model and assess the transmission mechanism using the mediation analysis proposed by Imai et al. (2011) and Imai and Yamamoto (2013).\footnote{We use the mediation R package developed by Tingley et al. (2014) for the practical implementation of this framework.}
+
+The mediation analysis follows a two-step process. First, we examine how D/H experiences affect political polarization (see Equation \ref{eq:2}). Second, we analyze how both D/H experiences and political polarization jointly influence trust in political institutions (see Equation \ref{eq:3}). We measured political polarization at the individual level using a measure of political conformity/dissonance based on the political ideologies of the respondents. This measure is calculated as the square of the difference between the respondent's political ideology and the average political ideology of the country.\footnote{It is important to note that we use the full study sample to estimate the average political ideology of the country, rather than the matched sample. We believe that using the full representative country sample captures the true distance between the respondent's political ideology and the average political ideology of the country.}
+
+\begin{equation}
+\label{eq:2}
+M_{ic} = \alpha + \phi X_{ic} + \mathbf{Z}_{ic}'\mathbf{\beta} + \gamma_c + \epsilon_{ic}
+\end{equation}
+\begin{equation}
+\label{eq:3}
+Y_{ic} = \alpha + \delta X_{ic} + \rho M_{ic} + \mathbf{Z}_{ic}'\mathbf{\eta} + \lambda_c + \mu_{ic}
+\end{equation}
+
+Where:
+\begin{itemize}
+  \item \( Y_{ic} \): political trust for individual \( i \) in region \( c \)
+  \item \( X_{ic} \): D/H event (1 = treated, 0 = control)
+  \item \( M_{ic} \): political dissonance for individual \( i \) in region \( c \)
+  \item $\phi$, $\delta$, and $\rho$: coefficients of interests
+  \item \( \mathbf{Z}_{ic} \): vector of covariates
+  \item $\mathbf{\beta}$ and $\mathbf{\eta}$: coefficient vectors for covariates
+  \item $\gamma_c$ and $\lambda_c$: region fixed effects
+  \item $\epsilon_{ic}$ and $\mu_{ic}$: error terms
+\end{itemize}
+
+After fitting these models, we use bootstrapping to estimate causal effects under counterfactual scenarios. In each simulation, we compare predicted trust levels between two scenarios: experiencing D/H events versus not experiencing them, while allowing political dissonance to adjust to its expected level under each condition. Averaging across simulations yields the average causal mediation effect (ACME), which captures the indirect effect through polarization, and the average direct effect (ADE), which captures the remaining direct impact.
+
+Regarding politcal alignment, we hypothesize that there is heterogenous effects between individuals that are politically aligned with the incumbent party and those who are not. To test this hypothesis, we include a measure of political alignment with the incumbent party in our regression model (see Equation \ref{eq:4}) and assess its interaction with the D/H event variable.
+
+\begin{equation}
+  \label{eq:4}
+  log(Y_{ic}) = \alpha + \tau X_{ic} + \ \mathbf{Z}_{ic}'\mathbf{\beta} + \gamma_c + \varepsilon_{ic}
+  \end{equation}
+  
+  Where:
+  \begin{itemize}
+    \item \( Y_{ic} \): political trust for individual \( i \) in region \( c \)
+    \item \( X_{ic} \): D/H event (1 = treated, 0 = control)
+    \item \( \tau \): treatment effect (ATT)
+    \item \( \mathbf{Z}_{ic} \): vector of covariates
+    \item \( \mathbf{\beta} \): coefficient vector for covariates
+    \item \( \gamma_c \): region fixed effects
+    \item \( \varepsilon_{ic} \): error term
+  \end{itemize}
 
 \section{Results}
 
@@ -116,9 +161,11 @@ When we compare trust levels in political institutions between people who have e
 
 We attempt to isolate a causal effect by matching people who have experienced a D/H event with people who have similar demographic characteristics and political traits but have not experienced such events. This approach allows us to approximate the counterfactual outcomes that we cannot directly observe in our data. To evaluate how this matching affects our analysis, we begin by assessing the initial balance in characteristics between people who have experienced D/H events and those who have not.
 
-\subsection{Preprocessing of the study sample using matching methods}
+\subsection{Assessing balance between groups}
 
 Appendix \ref{appendix:b} shows balance statistics for the whole sample prior to matching. As we can observe, several covariates display standardized mean differences above the thresholds suggested by the literature—0.1 or, more conservatively, 0.05. Of particular note are the high values for average civic participation, interest in politics, and political alignment with the incumbent party, suggesting that the political profiles of people who have suffered D/H due to their political opinions and those who have not are systematically different. Similarly, age and ethnic composition differ significantly between both groups on average, indicating that the demographic composition of the groups is also systematically different. These insights are validated by the variance ratios and empirical cumulative distribution functions (eCDFs).\footnote{The Std. Mean Diff. is the difference in group means standardized to a single scale for all covariates. The literature suggests values below 0.1—or more conservatively, below 0.05—as indicators of good balance (Ali et al., 2011; Stuart et al., 2013). The Var. Ratio compares the variance of a covariate between the treatment and control groups. Ratios close to 1 indicate good balance (Austin, 2009). Empirical Cumulative Distribution Function Statistics (eCDF) assess balance beyond the mean by comparing the full distribution of each covariate across groups (McCaffrey et al., 2004). Values close to zero indicate good balance.}
+
+The imbalances found between both groups suggest that estimates calculated using the full study sample would carry significant bias due to systematic differences in demographic and political characteristics. Therefore, a matching procedure to preprocess the data is a valid approach to reduce these biases.
 
 After performing the matching procedure, we reassess the balance of covariates between the treatment and control groups. The results are presented in Table \ref{table:3}. As we can see, the matching procedure has significantly improved the balance of covariates between both groups. The standardized mean differences for all covariates are now below 0.05, indicating that the treatment and control groups are now comparable in terms of their demographic and political characteristics. This is further supported by the variance ratios, which are now close to 1 for all covariates, and the empirical cumulative distribution function (eCDF) statistics, which are also close to zero for all covariates. Appendix \ref{appendix:c} provides a love plot that visually summarizes the balance of covariates before and after matching.
 
@@ -128,37 +175,65 @@ As a result of the matching procedure, our sample size was reduced from 44,235 i
 
 \subsection{The effect of political discrimination and harassment on trust in political institutions}
 
-To estimate the effect of political discrimination and harrasment on trust in political institutions, we estimate four different specifications of \ref{eq:1}. The first specification includes only the treatment variable (D/H event) and region fixed effects. The second specification adds demographic covariates, while the third specification adds both demographic and political covariates. The fourth specification replicates the third one, but it fits the model using the full unmatched sample. The results of these estimations are presented in Table \ref{table:4}.
+To estimate the effect of political discrimination and harrasment on trust in political institutions, we estimate four different specifications of Equation \ref{eq:1}. The first specification includes only the treatment variable (experiencing a D/H event) and region fixed effects. The second specification adds demographic covariates, while the third specification adds both demographic and political covariates. The fourth specification replicates the third one, but it fits the model using the full unmatched sample. The results of these estimations are presented in Table \ref{table:4}.
 
 \input{"tabs/main_results.tex"}
 
-As we can observe, the coefficient for the D/H event variable is negative and statistically significant in all specifications. This indicates that experiencing political discrimination or harassment has a negative effect on trust in political institutions. Furthermore, the magnitude of this effect is consistent across specifications, ranging from -0.159 to -0.194, depending on the model. This means that individuals who have experienced political discrimination or harassment tend to have between 16\% and 19\% lower levels of trust in political institutions compared to those who have not experienced such events. 
+As we can observe, the coefficient for the D/H event variable is negative and statistically significant in all specifications. This indicates that experiencing political discrimination or harassment has a negative effect on trust in political institutions. Furthermore, the magnitude of this effect is consistent across specifications, ranging from -0.159 to -0.194, depending on the model. This means that individuals who have experienced political discrimination or harassment tend to have between 16\% and 19\% lower levels of trust in political institutions compared to those who have not experienced such events. This effect is large in the context of public opinion data and suggests a meaningful deterioration in institutional trust linked to experiences of political unfairness or targeting.
 
-Interestingly, the magnitude of the coefficient is slightly smaller when using the full unmatched sample, which suggests that the bias introduced by using the full sample tends to underestimate the effect of political discrimination and harassment on trust in political institutions.
+Interestingly, the magnitude of the coefficient is slightly smaller when using the full unmatched sample, which suggests that the bias introduced by using the full sample tends to underestimate the absolute effect of political discrimination and harassment on trust in political institutions.
 
 Using a matched sample has allowed us to improve the precision of our estimates. However, achieving a balance in covariates using a matching procedure suggests that the treatment and control groups are comparable in ways that are more aligned with the assumptions necessary for causal inference (Branson, 2021). However, balance represents a necessary but not sufficient condition for causality, as unobserved confounders may still bias our estimates. Therefore, we perform a sensitivity analysis to assess the robustness of our results to potential violations of the unconfoundedness assumption.
 
 \subsection{Sensitivity analysis}
 
-To assess the robustness of our results to potential violations of the unconfoundedness assumption, we perform a sensitivity analysis using the framework proposed by Cinelli and Hazlett (2020). This framework allows us to estimate the minimum strength of an unobserved confounder that would be required to nullify our estimated treatment effect. We also assess the robustness of our results to violations of the unconfoundedness assumption by estimating the treatment effect under different levels of unobserved confounding. Table \ref{table:5} presents the main results of the sensitivity analysis.\footnote{The results presented in this section were perfomed using the sensemakr R package (Cinelli et al., 2024).}
+We assess the robustness of our results to violations of the unconfoundedness assumption using the sensitivity analysis framework of Cinelli and Hazlett (2020). This method estimates the minimum strength of unobserved confounding needed to eliminate our treatment effect and evaluates how results vary under different confounding scenarios. Table \ref{table:5} presents these sensitivity analysis results.
 
 According to our results, the robustness value ($RV_{q = 1}$) is 13.8\%, which means that an unobserved confounder—orthogonal to the current set of covariates—would need to explain at least 13.8\% of the variance in experiencing political discrimination or harassment (D/H) to nullify our estimated treatment effect.
 
 Similarly, the robustness value for testing the null hypothesis that the treatment effect is zero ($RV_{q = 1, \alpha = 0.05}$) is 12.4\%. This means that an unobserved confounder—orthogonal to the current set of covariates—would need to explain at least 12.4\% of the variance in experiencing D/H events to make our treatment effect statistically insignificant at the 5\% level.
 
-Finally, the partial R2 of the treatment ($R^2_{Y\sim D| {\bf X}, D}$) is 3.5\%, which indicates that an unobserved confounder would need to explain at least 3.5\% of the variance in trust in political institutions to nullify our estimated treatment effect.
+Finally, the partial $R^2$ of the treatment ($R^2_{Y\sim D| {\bf X}, D}$) is 3.5\%, which indicates that an unobserved confounder would need to explain at least 3.5\% of the variance in trust in political institutions to nullify our estimated treatment effect.
 
-These levels are relatively high. However, it is very difficult to know how strong are the unobserved factors that we are not capturing in our data without domain knowledge or a valid comparison with the factors that are able to capture with our data. Therefore, we will compare this results to the levels of an observed confounder. More specifically, political alignment with the incumbent party. We use political alignment as a benchmark given that it is hard to imagine that our data is omitting a variable that is equally or strongly related to trust in political institutions than political alignment. 
+These levels are relatively high. However, without accurate domain knowledge, it is very difficult to assess how strong the unobserved factors not captured in our data might be. To provide context, we benchmark these results against political alignment with the incumbent party—a covariate strongly related to institutional trust. Political alignment serves as a reasonable upper bound since few omitted variables would likely have stronger associations with institutional trust and D/H experiences than alignment with the governing party.
 
-Table \ref{table:5} also shows that an important confounder such as political alignment with the incumbent party (\emph{incpp}) is only able to explain 1.8\% of the variance in trust in political institutions, which is lower than the partial R2 of the treatment. Given that this value is below the RV for experiencing D/H events, we can conclude that our results are robust to the possibility of unobserved confounding.
+Table \ref{table:5} shows the benchmarking results for political alignment with the incumbent party (\emph{incpp}). According to the analysis, political alignment explains only 1.8\% of the variance in trust in political institutions, which is significantly lower than the estimated partial $R^2$ and both RV values. Therefore, we can conclude that our results are robust to the possibility of unobserved confounding.
 
 \input{"tabs/sensitivity_analysis.tex"}
 
-Our analysis indicates that our findings are still valid even if we are omitting a confounder that can explain 15 times the variance in trust in political institutions that is currently explained by political alignment with the incumbent party, as shown in Appendix \ref{appendix:d}. Moreover, the magnitude of the effect remains stable even in the presence of such hypothetical shock. This suggests that our results are robust to the possibility of unobserved confounding, at least to the extent that political alignment with the incumbent party is a valid benchmark.
+Our analysis further shows that results remain valid even with an omitted confounder 15 times stronger than political alignment (see Appendix \ref{appendix:d}). Moreover, the treatment effect magnitude remains stable even under this extreme confounding scenario. This reinforces our conclusion that the results are robust to unobserved confounding, at least within the bounds established by our political alignment benchmark.
 
-\subsection{Polarization as the transmission channel}
+\subsection{Polarization as a transmission channel}
 
-\section{Discussion}
+As mentioned earlier, we hypothesize that political polarization serves as a transmission channel through which political discrimination and harassment affect trust in political institutions. To test this hypothesis, we conduct a mediation analysis using the framework developed by Imai et al. (2011) and Imai and Yamamoto (2013). This analysis aims to determine how much of the total effect of D/H experiences on institutional trust operates through political polarization. The framework is based in the estimation of the system presented by equations \ref{eq:2} and \ref{eq:3} along with a bootstrapping procedure to test the mediation channel.
+
+Table \ref{table:6} presents three key estimates: the total effect, the average causal mediation effect (ACME), and the average direct effect (ADE). As we can observe, experiencing political discrimination or harassment leads to a large and highly significant drop in institutional trust: the Total Effect of –0.863 (on a 0–10 scale) tells us that, on average, those who report discrimination score 0.863 points lower in trust than those who do not. This effect is equivalent to the 18.9\% decrease presented in Table \ref{table:4}, column (III).
+
+To better understand the mechanisms behind this decline in trust, the analysis separates the effect into two components: the part that operates indirectly through increased political dissonance (the Average Causal Mediation Effect, or ACME), and the part that operates directly, independently of dissonance (the Average Direct Effect, or ADE).
+
+The estimated ACME is –0.0063, meaning that only about 0.006 points of the decline in trust can be attributed to a pathway where discrimination increases political dissonance, which in turn lowers trust. By contrast, the ADE is –0.857, nearly identical to the total effect, which shows that the vast majority of the impact of discrimination on trust occurs directly, without being mediated by political dissonance.
+
+In other words, less than 1\% of the total effect of political discrimination on institutional trust can be explained by changes in political dissonance. Although this indirect effect is statistically significant, it is substantively negligible. This implies that political dissonance does act as a mechanism, but it plays only a very minor role. Most of the loss in trust stems from other pathways—perhaps emotional responses like anger or fear, cognitive assessments of systemic injustice, or broader alienation from the political system that are not captured by the dissonance variable.
+
+\input{"tabs/mediation_analysis.tex"}
+
+\subsection{Heterogenous effects by political alignment}
+
+Given that our outcome variable is individual trust in political institutions, we hypothesize that there might be heterogeneous effects since political alignment with the incumbent party is a strong predictor of institutional trust. To test this hypothesis, we estimate the effect of political discrimination and harassment separately for two groups based on their political alignment: those aligned with the incumbent party and those who are not.
+
+As Table \ref{table:7} shows, experiencing a D/H event reduces trust in political institutions regardless of political alignment. However, the magnitude of this effect is significantly larger for individuals who are not aligned with the incumbent party. According to our estimates, experiencing a D/H event is associated with a 20\% decrease in institutional trust for non-aligned individuals, compared to a 14\% decrease for those aligned with the incumbent party. The differences in magnitudes is statistically different at the 95\% confidence level.
+
+\input{"tabs/heterogenous_effects.tex"} 
+
+We wanted to further explore the relationship between political alignment and the effect of political discrimination and harassment on trust in political institutions. Given the results presented in the previous section, we consider the possibility that the heterogenous effects found in politically aligned individuals might be affected by their level of political dissonance. To answer this question, we further increased the level of disaggregation by estimating the effect of political discrimination and harassment on trust in political institutions for four different groups depending on their political alignment and their level of political dissonance.\footnote{The level of political dissonance was categorized in either high or low depending if the individual's measure was above or below the median of the full study sample, respectively.}
+
+As Table \ref{table:8} shows, for individuals with a low level of political dissonance, experiencing a D/H event does not has any effect on their level of trust in political institutions if they are politically aligned with the incumbent party, while their counterparts that are not politically aligned experience a 18\% decrease in trust in political institutions.
+
+On the other hand, for individuals with a high level of political dissonance, the effect remains high between 18\% and 21\% for both politically aligned and non-aligned individuals. Interestingly, the effect is not statistically different between the two groups.
+
+\input{"tabs/het_effects_dissonance.tex"} 
+
+\section{Discussion and Final Remarks}
 
 \newpage
 \appendix

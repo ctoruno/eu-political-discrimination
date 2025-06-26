@@ -127,7 +127,53 @@ ggsave(
   height   = 6,
   units    = "in"
 ) 
-  
+
+
+fig_tsbd_2 = ggplot(
+  data = tsbd_data %>%
+    mutate(
+      incpp = case_when(
+        incpp == 1 ~ "Incumbent Party",
+        incpp == 0 ~ "Other Alignment"
+      )
+    ) %>%
+    filter(
+      !is.na(poldis) & !is.na(incpp)
+    ),
+  aes(
+    x = incpp,
+    y = trt_score,
+    fill = dh_exp
+  )
+) +
+  geom_boxplot() +
+  labs(
+    y = "Trust in Political Institutions (Score)",
+    x = ""
+  ) + 
+  scale_fill_manual(
+    "",
+    values = c(
+      "D/H Experience" = "#494C6F",
+      "No D/H Experience" = "#ABB4C4"
+    )
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.caption = element_text(hjust = 0),
+    plot.caption.position = "plot",
+    panel.grid.major.x = element_blank()
+  )
+
+ggsave(
+  plot     = fig_tsbd_2,
+  filename = glue("viz/fig_tsbd__2.png"),
+  width    = 8,
+  height   = 6,
+  units    = "in"
+)  
+
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##

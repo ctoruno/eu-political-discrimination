@@ -111,7 +111,7 @@ fig_dicg <- ggplot(
   data = fig_dicg_data,
   aes(
     x = ground,
-    y = rev(country),
+    y = country,
     size = incidence,
     color = incidence
   )

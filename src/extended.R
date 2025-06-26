@@ -27,6 +27,8 @@ if (interactive()){
   source("src/viz.R")
 }
 
+bootstraping = FALSE
+
 # Master Data
 eugpp <- load_data(path2SP, "gpp") %>%
   filter(
@@ -302,9 +304,9 @@ polarization_data <- eugpp %>%
     avg_polid_right = mean(polid_right, na.rm = TRUE),
     avg_polid_center = mean(polid_center, na.rm = TRUE),
     
-    distance2left = abs(polid-avg_polid_left),
-    distance2right = abs(polid-avg_polid_right),
-    distance2center = abs(polid-avg_polid_center),
+    distance2left = abs((polid-avg_polid_left)^2),
+    distance2right = abs((polid-avg_polid_right)^2),
+    distance2center = abs((polid-avg_polid_center)^2),
     
     polgap = case_when(
       left == 1 ~ mean(c(
@@ -341,13 +343,126 @@ matched_data <- matched_data %>%
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##
-## 8. Mediation Analysis ----
+## 8. Heterogeneous Effects: Political Alignment ----
 ##
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-set.seed(281299)
+## Fitting Model
+fe_model.het <- paste0(
+  "log(trt_score_scaled) ~ poldis + incpp*poldis +", 
+  paste(dem_vars, collapse = " + "), " + ",
+  paste(pol_vars, collapse = " + "), " + ", 
+  "age^2 + polid^2 | nuts_id"
+)
+fitted_model.het <- feols(
+  as.formula(fe_model.het),
+  data = matched_data,
+  cluster = ~subclass,
+  weights = matched_data$weights
+)
+modelsummary(fitted_model.het)
+
+## Marginal Effects
+mgeffects.het <- avg_comparisons(
+  fitted_model.het,
+  variables = "poldis",
+  by = "incpp",
+  transform = expm1,
+  newdata = subset(poldis == 1),
+  vcov = sandwich::vcovCL(
+    fitted_model.het,
+    cluster = matched_data$subclass
+  ),
+  conf_level = 0.95
+)
+
+## Heterogeneous Effects Table
+mgeffects.het
+modelsummary(
+  mgeffects.het,
+  stars     = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
+  gof_omit  = "R2|RMSE|AIC|BIC",
+  shape     = term + incpp ~ model,
+)
+het.effects(mgeffects.het)
+
+
+## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##
+## 9. Heterogeneous Effects: Political Conformity/Dissonance ----
+##
+## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Political Dissonance Data
+political_dissonance_by_country <- study_data %>%
+  group_by(country) %>%
+  mutate(
+    avg_polid = mean(polid, na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  mutate(
+    dist2avg.polid = (avg_polid - polid)^2
+  )
+
+median_dist <- median(political_dissonance_by_country$dist2avg.polid)
+
+political_dissonance_data <- matched_data %>%
+  left_join(
+    political_dissonance_by_country %>% 
+      select(country_year_id, dist2avg.polid),
+    by = "country_year_id"
+  ) %>%
+  mutate(
+    high_dist2avg.polid = if_else(
+      dist2avg.polid >= median_dist, 1, 0
+    )
+  )
+
+## Fitting Model
+fe_model.dissonance <- paste0(
+  "log(trt_score_scaled) ~ poldis + poldis*high_dist2avg.polid*incpp +", 
+  paste(dem_vars, collapse = " + "), " + ",
+  "ipol + cp_score | nuts_id"
+)
+fitted_model.dissonance <- feols(
+  as.formula(fe_model.dissonance),
+  data = political_dissonance_data,
+  cluster = ~subclass,
+)
+modelsummary(fitted_model.dissonance)
+
+## Marginal Effects
+mgeffects.dissonance <- avg_comparisons(
+  fitted_model.dissonance,
+  variables = c("poldis"),
+  by = c("high_dist2avg.polid", "incpp"),
+  transform = expm1,
+  newdata = subset(poldis == 1),
+  conf_level = 0.95
+)
+
+## Heterogeneous Effects Table
+mgeffects.dissonance
+modelsummary(
+  mgeffects.dissonance,
+  stars     = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
+  gof_omit  = "R2|RMSE|AIC|BIC",
+  shape     = term + incpp + high_dist2avg.polid ~ model,
+)
+het.effects.dissonance(mgeffects.dissonance)
+
+
+## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##
+## 10. Mediation Analysis: Political Conformity/Dissonance ----
+##
+## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+set.seed(140892)
+
+## Mediation Data
 mediation_data <- dummy_cols(
-  matched_data, 
+  political_dissonance_data, 
   select_columns = "nuts_id", 
   remove_first_dummy = TRUE, 
   remove_selected_columns = TRUE
@@ -355,11 +470,10 @@ mediation_data <- dummy_cols(
 
 ## Mediator Model
 m.model <- paste(
-  "polgap ~ poldis +",
-  paste(dem_vars, collapse = " + "), "+",
-  paste(pol_vars, collapse = " + "), "+",
-  paste(names(mediation_data %>% select(starts_with("nuts_"))), collapse = " + "), "+",
-  "cp_score + age^2"
+  "dist2avg.polid ~ poldis +",
+  paste(dem_vars, collapse = " + "), "+ age^2 +",
+  paste(names(mediation_data %>% select(starts_with("nuts_id"))), collapse = " + "), "+",
+  "ipol + incpp + cp_score"
 )
 m.model_fitted <- lm(
   as.formula(m.model),
@@ -369,11 +483,10 @@ summary(m.model_fitted)
 
 ## Outcome Model
 y.model <- paste(
-  "trt_score ~ poldis + polgap + poldis*polgap +",
-  paste(dem_vars, collapse = " + "), "+",
-  paste(pol_vars, collapse = " + "), "+",
+  "trt_score_scaled ~ poldis + dist2avg.polid + poldis*dist2avg.polid +",
+  paste(dem_vars, collapse = " + "), "+ age^2 +",
   paste(names(mediation_data %>% select(starts_with("nuts_"))), collapse = " + "), "+",
-  "cp_score + age^2"
+  "ipol + incpp + cp_score"
 )
 y.model_fitted <- lm(
   as.formula(y.model),
@@ -381,21 +494,31 @@ y.model_fitted <- lm(
 )
 summary(y.model_fitted)
 
-## ACME bootstrapping
-mediation_results <- mediate(
-  m.model_fitted,
-  y.model_fitted,
-  treat    = "poldis",
-  mediator = "polgap",
-  boot     = TRUE,
-  sims     = 10000,
-  boot.ci.type = "perc"
-)
+## ACME bootstrapping (computationally expensive)
+if(bootstraping){
+  mediation_results <- mediate(
+    m.model_fitted,
+    y.model_fitted,
+    treat    = "poldis",
+    mediator = "dist2avg.polid",
+    boot     = TRUE,
+    sims     = 10000,
+    # robustSE = TRUE,
+    boot.ci.type = "bca"
+  )
+  saveRDS(
+    mediation_results,
+    "R.objs/mediation_results_3.rds"
+  )
+} else {
+  mediation_results <- readRDS(
+    "R.objs/mediation_results_3.rds"
+  )
+}
+
+## Mediation Analysis Table
 summary(mediation_results)
-saveRDS(
-  mediation_results,
-  "R.objs/mediation_results.rds"
-)
+mediation_analysis(mediation_results)
 
 ## ACME sensitivity
 mediation_sensitivity <- medsens(
@@ -404,42 +527,6 @@ mediation_sensitivity <- medsens(
   sims = 1000
 )
 summary(mediation_sensitivity)
-plot(mediation_sensitivity)
-plot(mediation_sensitivity, sens.par = "R2", r.type = "total", sign.prod = "positive")
+# plot(mediation_sensitivity)
+# plot(mediation_sensitivity, sens.par = "R2", r.type = "total", sign.prod = "positive")
 
-
-## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-##
-## 9. Heterogeneous Effects ----
-##
-## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-fe_model.het <- paste(
-  "trt_score_scaled ~ poldis +", 
-  paste(dem_vars, collapse = " + "), "+",
-  paste(pol_vars, collapse = " + "), "+",
-  "cp_score + age^2 + poldis*incpp | nuts_id"
-)
-fitted_model.het <- feols(
-  as.formula(fe_model.het),
-  data = matched_data,
-  cluster = ~subclass,
-  weights = matched_data$weights
-)
-summary(fitted_model.het)
-
-mgeffects.het <- avg_comparisons(
-  fitted_model.het,
-  variables = "poldis",
-  by = "incpp",
-  transform = expm1,
-  newdata = subset(poldis == 1)
-)
-mgeffects.het
-
-modelsummary(
-  mgeffects.het,
-  stars     = c("*" = 0.05, "**" = 0.01, "***" = 0.001),
-  gof_omit  = "R2|RMSE|AIC|BIC",
-  shape     = term + incpp ~ model,
-)

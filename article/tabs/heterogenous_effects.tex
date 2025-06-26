@@ -1,0 +1,23 @@
+\begin{table}[hbtp]
+\centering
+\caption{Effect of Political D/H Experiences on Institutional Trust by Political Alignment}
+\label{table:7}
+\footnotesize
+\vspace{2mm}
+\begin{talltblr}[
+label=none,
+remark{Note} = {Table shows the estimated coefficient of having experienced political discrimination or harrasment (D/H) on the level of trust in political institutions for two different groups depending on their political alignment: non-incumbent and incumbent. The estimation used the matched sample of 14,004 respondents, region fixed effects, demographic and political covariates, and clustered standard errors at the regional level. *, **, and *** represent statistical significance at $p < 0.05$, $p < 0.01$, and $p < 0.001$, respectively. Estimates shown in the table have been transformed using an exponential transformation to interpret them as a percentage change.},
+remark{Source} = {Eurovoices General Population Poll 2024},
+]
+{                     
+colspec={Q[l]Q[c]Q[c]Q[c]Q[c]Q[c]},
+colsep=4pt
+}
+\toprule
+Pol. Alignment & Estimate & $Pr(>|z|)$ & 95\% CI Lower & 95\% CI Lower & Visualization\\
+\midrule
+Non-Incumbent &\num{ -0.195}*** & 0.000 & -0.215 & -0.175 & \includegraphics[width=0.47in, height=0.12in]{"viz/heteffects_1.png"}\\
+Incumbent & \num{-0.138}*** & 0.000 & -0.189 & -0.084 & \includegraphics[width=0.47in, height=0.12in]{"viz/heteffects_2.png"}\\
+\bottomrule
+\end{talltblr}
+\end{table}

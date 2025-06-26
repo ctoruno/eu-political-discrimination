@@ -530,3 +530,19 @@ summary(mediation_sensitivity)
 # plot(mediation_sensitivity)
 # plot(mediation_sensitivity, sens.par = "R2", r.type = "total", sign.prod = "positive")
 
+
+
+
+x = paste0(
+  "trt_score_scaled ~ poldis + ", 
+  paste(dem_vars, collapse = " + "), " + ",
+  paste(pol_vars, collapse = " + "), " + ", 
+  "age^2 + polid^2 | nuts_id"
+)
+
+fitted_model <- feols(
+  as.formula(x),
+  data = matched_data,
+  cluster = ~subclass,
+  weights = matched_data$weights
+)

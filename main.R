@@ -15,22 +15,16 @@ library(optparse)
 # Define command line options
 option_list <- list(
   make_option(
-    c("--d"),
+    c("--v1"),
     action  = "store_true",
     default = FALSE,
-    help    = "Execute Discrimination script and all its estimations"
+    help    = "Execute routines related to V1 of the the paper and all its estimations"
   ),
   make_option(
-    c("--p"),
+    c("--v2"),
     action  = "store_true",
     default = FALSE,
-    help    = "Execute Polarization script and all its estimations"
-  ),
-  make_option(
-    c("--t"),
-    action  = "store_true",
-    default = FALSE,
-    help    = "Execute Trust script and all its estimations"
+    help    = "Execute routines related to V2 of the the paper and all its estimations"
   ),
   make_option(
     c("--all"),
@@ -39,7 +33,7 @@ option_list <- list(
     help    = "Execute ALL scripts and its estimations"
   ),
   make_option(
-    c("--verbose"),
+    c("--noverbose"),
     action  = "store_true",
     default = FALSE,
     help    = "Display verbose"
@@ -57,7 +51,7 @@ opt <- parse_args(opt_parser)
 
 # Helper function to print verbose messages
 verbose_message <- function(message) {
-  if (opt$verbose) {
+  if (opt$noverbose) {
     cat(paste0("[INFO] ", message, "\n"))
   }
 }
@@ -75,17 +69,15 @@ main <- function(){
   source("src/config.R")
   source("src/data_loading.R")
   
-  if (opt$d | opt$all){
+  if (opt$v1 | opt$all){
     verbose_message("Executing Discrimination script and all its estimations...")
     source("src/discrimination.R")
+    source("src/polarization.R")
+    source("src/trust.R")
   }
   if (opt$p | opt$all){
     verbose_message("Executing Polarization script and all its estimations...")
-    source("src/polarization.R")
-  }
-  if (opt$t | opt$all){
-    verbose_message("Executing Trust script and all its estimations")
-    source("src/trust.R")
+    source("src/extended.R")
   }
   
 }

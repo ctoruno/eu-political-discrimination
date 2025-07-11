@@ -441,6 +441,65 @@
       \endverb
       \keyw{observational study,matching,propensity score,balance,bias,goodness-of-fit,propensity-score matching,standardized difference}
     \endentry
+    \entry{baldassarri_partisans_2008}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6582ac75cf4e87af029788918efd240b}{%
+           family={Baldassarri},
+           familyi={B\bibinitperiod},
+           given={Delia},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e1eb60e3b6e222217bf8e9b24070b28}{%
+           family={Gelman},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{fullhash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{fullhashraw}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{bibnamehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authorbibnamehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authornamehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authorfullhash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authorfullhashraw}{328d990bf9c501bc27baf7795ebf257e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Public opinion polarization is here conceived as a process of alignment along multiple lines of potential disagreement and measured as growing constraint in individuals' preferences. Using NES data from 1972 to 2004, the authors model trends in issue partisanship—the correlation of issue attitudes with party identification—and issue alignment—the correlation between pairs of issues—and find a substantive increase in issue partisanship, but little evidence of issue alignment. The findings suggest that opinion changes correspond more to a resorting of party labels among voters than to greater constraint on issue attitudes: since parties are more polarized, they are now better at sorting individuals along ideological lines. Levels of constraint vary across population subgroups: strong partisans and wealthier and politically sophisticated voters have grown more coherent in their beliefs. The authors discuss the consequences of partisan realignment and group sorting on the political process and potential deviations from the classic pluralistic account of American politics.}
+      \field{issn}{0002-9602}
+      \field{journaltitle}{American Journal of Sociology}
+      \field{month}{9}
+      \field{note}{Publisher: The University of Chicago Press}
+      \field{number}{2}
+      \field{shorttitle}{Partisans without {Constraint}}
+      \field{title}{Partisans without {Constraint}: {Political} {Polarization} and {Trends} in {American} {Public} {Opinion}}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{114}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \field{pages}{408\bibrangedash 446}
+      \range{pages}{39}
+      \verb{doi}
+      \verb 10.1086/590649
+      \endverb
+      \verb{file}
+      \verb Accepted Version:/Users/carlostoruno/Zotero/storage/PYDQ2A4A/Baldassarri and Gelman - 2008 - Partisans without Constraint Political Polarization and Trends in American Public Opinion.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/590649
+      \endverb
+      \verb{url}
+      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/590649
+      \endverb
+    \endentry
     \entry{berge_efficient_2018}{article}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=15173eaff1a263bcc309b764caac5c76}{%
@@ -2370,6 +2429,67 @@
       \field{labeltitlesource}{title}
       \field{title}{{WJP} {EUROVOICES}: {People}'s {Voices} {Microdata}}
       \field{year}{Forthcoming}
+    \endentry
+    \entry{torcal_ideological_2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=41dbfab3dae5d527ebe6d1c81d088b4e}{%
+           family={Torcal},
+           familyi={T\bibinitperiod},
+           given={Mariano},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6a4df42c7b4f85317cd00dad6c93e780}{%
+           family={Magalhães},
+           familyi={M\bibinitperiod},
+           given={Pedro\bibnamedelima C.},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{fullhash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{fullhashraw}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{bibnamehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authorbibnamehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authornamehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authorfullhash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authorfullhashraw}{248270144aae2a1c745dfc1db1d0e7c3}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Does ideological polarization undermine or strengthen people’s principled support for democracy? In this study, we suggest that different manifestations of ideological polarization have different implications in this respect. Using data from 11 surveys conducted with representative samples of the adult populations of a group of liberal democratic countries, part of the Comparative National Elections Project, we look at how people’s level of ideological extremism and their perceptions of ideological polarization in their countries’ party systems are related with their support for democracy. We show that citizens who hold more extreme ideological positions are indeed less supportive of democracy and that such a negative relationship is strengthened as citizens’ extremism increases. However, we also show that the citizens who display higher levels of principled support for democracy are those who perceive parties to be neither too distant nor too close to each other in ideological terms. In other words, while a very polarized partisan supply seems to undermine popular commitment with democracy, very low polarization may have similar consequences.}
+      \field{issn}{1755-7739, 1755-7747}
+      \field{journaltitle}{European Political Science Review}
+      \field{month}{5}
+      \field{number}{2}
+      \field{title}{Ideological extremism, perceived party system polarization, and support for democracy}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{14}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \field{pages}{188\bibrangedash 205}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1017/S1755773922000066
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/carlostoruno/Zotero/storage/JWB9RZ7S/Torcal and Magalhães - 2022 - Ideological extremism, perceived party system polarization, and support for democracy.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/journals/european-political-science-review/article/ideological-extremism-perceived-party-system-polarization-and-support-for-democracy/D248B8254D93BE2D6632133D79E2CB3B?utm_source=chatgpt.com
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/journals/european-political-science-review/article/ideological-extremism-perceived-party-system-polarization-and-support-for-democracy/D248B8254D93BE2D6632133D79E2CB3B?utm_source=chatgpt.com
+      \endverb
+      \keyw{democratic support,ideological extremism,ideological polarization}
     \endentry
     \entry{tyler_why_2006}{book}{}{}
       \name{author}{1}{}{%
@@ -3054,6 +3174,65 @@
       \endverb
       \keyw{observational study,matching,propensity score,balance,bias,goodness-of-fit,propensity-score matching,standardized difference}
     \endentry
+    \entry{baldassarri_partisans_2008}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6582ac75cf4e87af029788918efd240b}{%
+           family={Baldassarri},
+           familyi={B\bibinitperiod},
+           given={Delia},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e1eb60e3b6e222217bf8e9b24070b28}{%
+           family={Gelman},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{fullhash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{fullhashraw}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{bibnamehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authorbibnamehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authornamehash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authorfullhash}{328d990bf9c501bc27baf7795ebf257e}
+      \strng{authorfullhashraw}{328d990bf9c501bc27baf7795ebf257e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Public opinion polarization is here conceived as a process of alignment along multiple lines of potential disagreement and measured as growing constraint in individuals' preferences. Using NES data from 1972 to 2004, the authors model trends in issue partisanship—the correlation of issue attitudes with party identification—and issue alignment—the correlation between pairs of issues—and find a substantive increase in issue partisanship, but little evidence of issue alignment. The findings suggest that opinion changes correspond more to a resorting of party labels among voters than to greater constraint on issue attitudes: since parties are more polarized, they are now better at sorting individuals along ideological lines. Levels of constraint vary across population subgroups: strong partisans and wealthier and politically sophisticated voters have grown more coherent in their beliefs. The authors discuss the consequences of partisan realignment and group sorting on the political process and potential deviations from the classic pluralistic account of American politics.}
+      \field{issn}{0002-9602}
+      \field{journaltitle}{American Journal of Sociology}
+      \field{month}{9}
+      \field{note}{Publisher: The University of Chicago Press}
+      \field{number}{2}
+      \field{shorttitle}{Partisans without {Constraint}}
+      \field{title}{Partisans without {Constraint}: {Political} {Polarization} and {Trends} in {American} {Public} {Opinion}}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{114}
+      \field{year}{2008}
+      \field{urldateera}{ce}
+      \field{pages}{408\bibrangedash 446}
+      \range{pages}{39}
+      \verb{doi}
+      \verb 10.1086/590649
+      \endverb
+      \verb{file}
+      \verb Accepted Version:/Users/carlostoruno/Zotero/storage/PYDQ2A4A/Baldassarri and Gelman - 2008 - Partisans without Constraint Political Polarization and Trends in American Public Opinion.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/590649
+      \endverb
+      \verb{url}
+      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/590649
+      \endverb
+    \endentry
     \entry{berge_efficient_2018}{article}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=15173eaff1a263bcc309b764caac5c76}{%
@@ -4983,6 +5162,67 @@
       \field{labeltitlesource}{title}
       \field{title}{{WJP} {EUROVOICES}: {People}'s {Voices} {Microdata}}
       \field{year}{Forthcoming}
+    \endentry
+    \entry{torcal_ideological_2022}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=41dbfab3dae5d527ebe6d1c81d088b4e}{%
+           family={Torcal},
+           familyi={T\bibinitperiod},
+           given={Mariano},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6a4df42c7b4f85317cd00dad6c93e780}{%
+           family={Magalhães},
+           familyi={M\bibinitperiod},
+           given={Pedro\bibnamedelima C.},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{fullhash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{fullhashraw}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{bibnamehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authorbibnamehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authornamehash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authorfullhash}{248270144aae2a1c745dfc1db1d0e7c3}
+      \strng{authorfullhashraw}{248270144aae2a1c745dfc1db1d0e7c3}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Does ideological polarization undermine or strengthen people’s principled support for democracy? In this study, we suggest that different manifestations of ideological polarization have different implications in this respect. Using data from 11 surveys conducted with representative samples of the adult populations of a group of liberal democratic countries, part of the Comparative National Elections Project, we look at how people’s level of ideological extremism and their perceptions of ideological polarization in their countries’ party systems are related with their support for democracy. We show that citizens who hold more extreme ideological positions are indeed less supportive of democracy and that such a negative relationship is strengthened as citizens’ extremism increases. However, we also show that the citizens who display higher levels of principled support for democracy are those who perceive parties to be neither too distant nor too close to each other in ideological terms. In other words, while a very polarized partisan supply seems to undermine popular commitment with democracy, very low polarization may have similar consequences.}
+      \field{issn}{1755-7739, 1755-7747}
+      \field{journaltitle}{European Political Science Review}
+      \field{month}{5}
+      \field{number}{2}
+      \field{title}{Ideological extremism, perceived party system polarization, and support for democracy}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{14}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \field{pages}{188\bibrangedash 205}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1017/S1755773922000066
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/carlostoruno/Zotero/storage/JWB9RZ7S/Torcal and Magalhães - 2022 - Ideological extremism, perceived party system polarization, and support for democracy.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/journals/european-political-science-review/article/ideological-extremism-perceived-party-system-polarization-and-support-for-democracy/D248B8254D93BE2D6632133D79E2CB3B?utm_source=chatgpt.com
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/journals/european-political-science-review/article/ideological-extremism-perceived-party-system-polarization-and-support-for-democracy/D248B8254D93BE2D6632133D79E2CB3B?utm_source=chatgpt.com
+      \endverb
+      \keyw{democratic support,ideological extremism,ideological polarization}
     \endentry
     \entry{tyler_why_2006}{book}{}{}
       \name{author}{1}{}{%

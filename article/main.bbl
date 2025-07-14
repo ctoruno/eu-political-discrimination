@@ -988,6 +988,63 @@
       \endverb
       \keyw{Ideology,Motivation,Personality,Political Attitudes,Political Conservatism,Political Liberalism}
     \endentry
+    \entry{garzia_negative_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0779dc0dc78b2de78d01985de44028b1}{%
+           family={Garzia},
+           familyi={G\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=661d3e1d7eae10e5a1698275c1b792f7}{%
+           family={Ferreira\bibnamedelimb da\bibnamedelima Silva},
+           familyi={F\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Frederico},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{fullhash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{fullhashraw}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{bibnamehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authorbibnamehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authornamehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authorfullhash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authorfullhashraw}{eb2f78fc55d43d770a656410e3ccad71}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Existing research has begun to tackle the electoral consequences of affective polarization through the lens of negative partisanship. However, not equal attention has been paid to voters’ polarized opinions toward political leaders and their impact on electoral behavior. This paper offers a comparative, longitudinal assessment of the relationship between negativity towards party leaders and vote choice in multi-party systems. We develop our negative personalization hypothesis and test it empirically on an original pooled dataset featuring 109 national election surveys from 14 Western European parliamentary democracies collected over the last six decades. Our findings confirm the existence of a robust relationship between negative party-leader evaluations and vote choice. Furthermore, the results demonstrate a sizable growth in the incidence of negative personalization across time, now of a magnitude that compares to that exerted by in-party-leader evaluations. This finding constitutes a central innovation adding to the personalization of politics literature.}
+      \field{issn}{0261-3794}
+      \field{journaltitle}{Electoral Studies}
+      \field{month}{6}
+      \field{title}{Negative personalization and voting behavior in 14 parliamentary democracies, 1961–2018}
+      \field{urlday}{14}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{71}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{102300}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.electstud.2021.102300
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Full Text PDF:/Users/carlostoruno/Zotero/storage/736AL5P8/Garzia and Ferreira da Silva - 2021 - Negative personalization and voting behavior in 14 parliamentary democracies, 1961–2018.pdf:application/pdf;ScienceDirect Snapshot:/Users/carlostoruno/Zotero/storage/5VU3EFKY/S0261379421000214.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0261379421000214
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0261379421000214
+      \endverb
+      \keyw{Comparative political behavior,Electoral change,Leader effects,Negative voting,Personalization of politics}
+    \endentry
     \entry{greifer_matching_2021}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=1c8a93102cfffacc2ccaffaaa2070715}{%
@@ -2131,6 +2188,78 @@
       \field{year}{2025}
       \field{pages}{175\bibrangedash 224}
       \range{pages}{50}
+    \endentry
+    \entry{reiljan_patterns_2024}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=ef9a17395101b8d38f6f7435a3238f09}{%
+           family={Reiljan},
+           familyi={R\bibinitperiod},
+           given={Andres},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0779dc0dc78b2de78d01985de44028b1}{%
+           family={Garzia},
+           familyi={G\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=006276b81a8faedc6155966ef93fe6fd}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Frederico\bibnamedelimb Ferreira\bibnamedelima Da},
+           giveni={F\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=def8f3946acee592f739ec39853aade4}{%
+           family={Trechsel},
+           familyi={T\bibinitperiod},
+           given={Alexander\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{1386c7e3a72b43ecdd12250f5b265845}
+      \strng{fullhash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{fullhashraw}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{bibnamehash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{authorbibnamehash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{authornamehash}{1386c7e3a72b43ecdd12250f5b265845}
+      \strng{authorfullhash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{authorfullhashraw}{970df22fd45ef4dbf540e4d15e2c8869}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Research indicates that affective polarization pervades contemporary democracies worldwide. Although some studies identify party leaders as polarizing agents, affective polarization has been predominantly conceptualized as a product of in-/out-party feelings. This study compares levels of party affective polarization (PAP) and leader affective polarization (LAP) cross-nationally, using data from the Comparative Study of Electoral Systems. Applying like–dislike scales and an identical index to both concepts, we reveal that while the two strongly correlate, LAP is systematically lower than PAP. The United States emerges as an exceptional case, being the only country where LAP significantly exceeds PAP. Drawing on regime input/output and institutions as theoretical building blocks, we explore cross-national variations and show that the relative strength of LAP vis-à-vis PAP is increased by presidential regime type, poor government performance, and low party system fragmentation. The findings of this study contribute to the thriving research on affective polarization and personalization of politics.}
+      \field{issn}{0003-0554, 1537-5943}
+      \field{journaltitle}{American Political Science Review}
+      \field{month}{5}
+      \field{number}{2}
+      \field{title}{Patterns of {Affective} {Polarization} toward {Parties} and {Leaders} across the {Democratic} {World}}
+      \field{urlday}{4}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{118}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{654\bibrangedash 670}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1017/S0003055423000485
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/carlostoruno/Zotero/storage/34F7ENPW/Reiljan et al. - 2024 - Patterns of Affective Polarization toward Parties and Leaders across the Democratic World.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/journals/american-political-science-review/article/patterns-of-affective-polarization-toward-parties-and-leaders-across-the-democratic-world/E1C891801A4CB1DEBE2AACE6446F6845
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/journals/american-political-science-review/article/patterns-of-affective-polarization-toward-parties-and-leaders-across-the-democratic-world/E1C891801A4CB1DEBE2AACE6446F6845
+      \endverb
     \endentry
     \entry{rogowski_how_2016}{article}{}{}
       \name{author}{2}{}{%
@@ -3721,6 +3850,63 @@
       \endverb
       \keyw{Ideology,Motivation,Personality,Political Attitudes,Political Conservatism,Political Liberalism}
     \endentry
+    \entry{garzia_negative_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0779dc0dc78b2de78d01985de44028b1}{%
+           family={Garzia},
+           familyi={G\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=661d3e1d7eae10e5a1698275c1b792f7}{%
+           family={Ferreira\bibnamedelimb da\bibnamedelima Silva},
+           familyi={F\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Frederico},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{fullhash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{fullhashraw}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{bibnamehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authorbibnamehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authornamehash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authorfullhash}{eb2f78fc55d43d770a656410e3ccad71}
+      \strng{authorfullhashraw}{eb2f78fc55d43d770a656410e3ccad71}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Existing research has begun to tackle the electoral consequences of affective polarization through the lens of negative partisanship. However, not equal attention has been paid to voters’ polarized opinions toward political leaders and their impact on electoral behavior. This paper offers a comparative, longitudinal assessment of the relationship between negativity towards party leaders and vote choice in multi-party systems. We develop our negative personalization hypothesis and test it empirically on an original pooled dataset featuring 109 national election surveys from 14 Western European parliamentary democracies collected over the last six decades. Our findings confirm the existence of a robust relationship between negative party-leader evaluations and vote choice. Furthermore, the results demonstrate a sizable growth in the incidence of negative personalization across time, now of a magnitude that compares to that exerted by in-party-leader evaluations. This finding constitutes a central innovation adding to the personalization of politics literature.}
+      \field{issn}{0261-3794}
+      \field{journaltitle}{Electoral Studies}
+      \field{month}{6}
+      \field{title}{Negative personalization and voting behavior in 14 parliamentary democracies, 1961–2018}
+      \field{urlday}{14}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{71}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{102300}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.electstud.2021.102300
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Full Text PDF:/Users/carlostoruno/Zotero/storage/736AL5P8/Garzia and Ferreira da Silva - 2021 - Negative personalization and voting behavior in 14 parliamentary democracies, 1961–2018.pdf:application/pdf;ScienceDirect Snapshot:/Users/carlostoruno/Zotero/storage/5VU3EFKY/S0261379421000214.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0261379421000214
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0261379421000214
+      \endverb
+      \keyw{Comparative political behavior,Electoral change,Leader effects,Negative voting,Personalization of politics}
+    \endentry
     \entry{greifer_matching_2021}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=1c8a93102cfffacc2ccaffaaa2070715}{%
@@ -4864,6 +5050,78 @@
       \field{year}{2025}
       \field{pages}{175\bibrangedash 224}
       \range{pages}{50}
+    \endentry
+    \entry{reiljan_patterns_2024}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=ef9a17395101b8d38f6f7435a3238f09}{%
+           family={Reiljan},
+           familyi={R\bibinitperiod},
+           given={Andres},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0779dc0dc78b2de78d01985de44028b1}{%
+           family={Garzia},
+           familyi={G\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=006276b81a8faedc6155966ef93fe6fd}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Frederico\bibnamedelimb Ferreira\bibnamedelima Da},
+           giveni={F\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=def8f3946acee592f739ec39853aade4}{%
+           family={Trechsel},
+           familyi={T\bibinitperiod},
+           given={Alexander\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{1386c7e3a72b43ecdd12250f5b265845}
+      \strng{fullhash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{fullhashraw}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{bibnamehash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{authorbibnamehash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{authornamehash}{1386c7e3a72b43ecdd12250f5b265845}
+      \strng{authorfullhash}{970df22fd45ef4dbf540e4d15e2c8869}
+      \strng{authorfullhashraw}{970df22fd45ef4dbf540e4d15e2c8869}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Research indicates that affective polarization pervades contemporary democracies worldwide. Although some studies identify party leaders as polarizing agents, affective polarization has been predominantly conceptualized as a product of in-/out-party feelings. This study compares levels of party affective polarization (PAP) and leader affective polarization (LAP) cross-nationally, using data from the Comparative Study of Electoral Systems. Applying like–dislike scales and an identical index to both concepts, we reveal that while the two strongly correlate, LAP is systematically lower than PAP. The United States emerges as an exceptional case, being the only country where LAP significantly exceeds PAP. Drawing on regime input/output and institutions as theoretical building blocks, we explore cross-national variations and show that the relative strength of LAP vis-à-vis PAP is increased by presidential regime type, poor government performance, and low party system fragmentation. The findings of this study contribute to the thriving research on affective polarization and personalization of politics.}
+      \field{issn}{0003-0554, 1537-5943}
+      \field{journaltitle}{American Political Science Review}
+      \field{month}{5}
+      \field{number}{2}
+      \field{title}{Patterns of {Affective} {Polarization} toward {Parties} and {Leaders} across the {Democratic} {World}}
+      \field{urlday}{4}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{volume}{118}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{654\bibrangedash 670}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1017/S0003055423000485
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/carlostoruno/Zotero/storage/34F7ENPW/Reiljan et al. - 2024 - Patterns of Affective Polarization toward Parties and Leaders across the Democratic World.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cambridge.org/core/journals/american-political-science-review/article/patterns-of-affective-polarization-toward-parties-and-leaders-across-the-democratic-world/E1C891801A4CB1DEBE2AACE6446F6845
+      \endverb
+      \verb{url}
+      \verb https://www.cambridge.org/core/journals/american-political-science-review/article/patterns-of-affective-polarization-toward-parties-and-leaders-across-the-democratic-world/E1C891801A4CB1DEBE2AACE6446F6845
+      \endverb
     \endentry
     \entry{rogowski_how_2016}{article}{}{}
       \name{author}{2}{}{%

@@ -30,6 +30,72 @@
 \NewTableCommand{\tinytableDefineColor}[3]{\definecolor{#1}{#2}{#3}}
 
 \usepackage[english]{babel}
-% \usepackage{apacite}
-\usepackage[backend=biber, style=apa]{biblatex}
+% \usepackage[backend=biber, style=apa]{biblatex}
+% \addbibresource{references.bib}
+
+% ---------- Sage Harvard bibliography ----------
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  maxcitenames=2,
+  mincitenames=1,
+  maxbibnames=3,
+  minbibnames=3,
+  giveninits=true,
+  uniquename=false,
+  uniquelist=false,
+  dashed=false,
+  sorting=nyt,
+  sortcites=true,
+  doi=false,
+  url=false,
+  isbn=false,
+  eprint=false
+]{biblatex}
 \addbibresource{references.bib}
+
+% Initials: no spaces, no full points -> "Huth EJ"
+\renewcommand*{\bibinitdelim}{}
+\renewcommand*{\bibinitperiod}{}
+\renewcommand*{\revsdnamepunct}{}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareNameAlias{default}{family-given}
+
+% "Clark JM and Hockey L"; "Brown W, Hughes J and Kent T"
+\renewcommand*{\multinamedelim}{\addcomma\space}
+\renewcommand*{\finalnamedelim}{\addspace\bibstring{and}\space}
+
+% Titles unquoted, sentence case as entered in the .bib
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat[article,incollection,inproceedings,thesis,report,online]{title}{#1}
+\DeclareFieldFormat[book]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[incollection]{booktitle}{\mkbibemph{#1}}
+
+% Journal: italic; "296(4): 401-405"
+\DeclareFieldFormat{journaltitle}{\mkbibemph{#1}}
+\DeclareFieldFormat[article]{volume}{#1}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\renewcommand*{\intitlepunct}{\addspace}
+\DeclareFieldFormat{postnote}{#1}
+
+% Page numbers after a colon: (Author, 2020: 45-47)
+\renewcommand*{\postnotedelim}{\addcolon\space}
+
+% Volume-issue-pages punctuation for articles
+\renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%
+  \iffieldundef{series}{}{\newunit\printfield{series}\setunit{\addspace}}%
+  \printfield{volume}%
+  \printfield{number}%
+  \setunit{\addcolon\space}%
+  \usebibmacro{issue}%
+  \newunit}
+
+% Web: "Available at: URL (accessed 10 July 2010)"
+\DeclareFieldFormat{url}{Available at\addcolon\space\url{#1}}
+\DeclareFieldFormat{urldate}{\mkbibparens{accessed #1}}
+
+% "In: Tschudin V and Brown EB (eds)"
+\renewbibmacro*{in:}{\printtext{In\addcolon}\addspace}
